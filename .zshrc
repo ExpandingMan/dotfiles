@@ -104,3 +104,12 @@ export MXNET_HOME=/home/savastio/mxnet
 
 # julia multithreading
 # export JULIA_NUM_THREADS=6
+
+# these are needed if julia is not installed through apt
+export JULIA_HOME=/opt/julia/bin
+
+export PATH=$PATH:$JULIA_HOME
+
+export LD_LIBRARY_PATH=$JULIA_HOME/../lib
+
+
