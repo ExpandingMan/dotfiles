@@ -110,6 +110,6 @@ export JULIA_HOME=/opt/julia/bin
 
 export PATH=$PATH:$JULIA_HOME
 
-export LD_LIBRARY_PATH=$JULIA_HOME/../lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$JULIA_HOME/../lib
 
 
