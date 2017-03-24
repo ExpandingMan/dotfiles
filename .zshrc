@@ -112,4 +112,9 @@ export PATH=$PATH:$JULIA_HOME
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$JULIA_HOME/../lib
 
+# alias tmux to set different term variable
+# alias tmux="env TERM=xterm-256color tmux"
+
+# start tmux on terminal start
+# [[ $TERM != "screen" ]] && exec tmux
 
