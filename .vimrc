@@ -22,3 +22,6 @@ autocmd BufRead,BufNewFile *.jl set filetype=julia
 " LaTeX to unicode as you type in julia
 let g:latex_to_unicode_auto = 1
 
+set clipboard=unnamedplus
+
+
