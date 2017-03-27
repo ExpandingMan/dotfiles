@@ -50,4 +50,10 @@ colorscheme OceanicNext
 " airline theme
 let g:airline_theme='oceanicnext'
 
+" some keyboard shortcuts, recall that leader is \ by default
+" nerdtree keyboard shortcut
+nmap <silent> <Leader>t :NERDTreeToggle<CR>
+" neomake keyboard shortcut
+nmap <silent> <Leader>l :Neomake<CR>
+
 
