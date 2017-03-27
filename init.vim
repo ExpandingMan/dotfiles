@@ -2,6 +2,8 @@
 " not that this goes in ~/.config/nvim
 " along with everything that'd normally go in ~/.vim
 
+" TODO switch to vundle
+
 " some simple python settings
 set tabstop=4
 set shiftwidth=4
@@ -33,5 +35,8 @@ set termguicolors
 
 syntax enable
 colorscheme OceanicNext
+
+" airline theme
+let g:airline_theme='badcat'
 
 
