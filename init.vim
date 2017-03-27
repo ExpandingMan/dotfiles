@@ -37,6 +37,6 @@ syntax enable
 colorscheme OceanicNext
 
 " airline theme
-let g:airline_theme='badcat'
+let g:airline_theme='oceanicnext'
 
 
