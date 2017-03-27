@@ -17,6 +17,10 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'godlygeek/tabular'
 Plugin 'Valloric/YouCompleteMe'
+
+" fuzzy text searches. installs fzf
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}
+Plugin 'junegunn/fzf.vim'
 call vundle#end()
 filetype plugin indent on
 
