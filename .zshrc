@@ -95,12 +95,20 @@ alias rm="rm -i"
 # shortcut to full ls
 alias ll="ls -lh"
 
+# fix for unbelievable slow checking of repos
+function git_prompt_info() {
+    ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+    echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$ZSH_THEME_GIT_PROMPT_SUFFIX"
+}
+
+# I forget exactly what this did, but it fixed something
+stty -ixon
 
 # this is a ridiculous measure that is needed for my DBInterface module
-export PYTHONPATH=$PYTHONPATH:/home/savastio/DBInterface/python
+# export PYTHONPATH=$PYTHONPATH:/home/savastio/DBInterface/python
 
 # MXNet needs this because it's being a bitch
-export MXNET_HOME=/home/savastio/mxnet
+# export MXNET_HOME=/home/savastio/mxnet
 
 # julia multithreading
 # export JULIA_NUM_THREADS=6
@@ -117,4 +125,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$JULIA_HOME/../lib
 
 # start tmux on terminal start
 # [[ $TERM != "screen" ]] && exec tmux
+
+# if you have CUDA installed, you'll need this
+# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/cuda/lib64
 
