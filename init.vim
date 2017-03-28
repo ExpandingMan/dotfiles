@@ -37,11 +37,10 @@ filetype plugin indent on
 " spaces instead of tabs
 set tabstop=4
 set shiftwidth=4
+" always use spaces instead of \t
 set expandtab
 set autoindent
 set smarttab
-" always use spaces instead of \t
-set expandtab
 
 " text wrapping for tex and md
 autocmd bufreadpre *.tex setlocal textwidth=160
