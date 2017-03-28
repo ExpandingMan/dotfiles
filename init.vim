@@ -15,7 +15,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'neomake/neomake'
-" note that vundle **always** looks at master, no matter what you do
+" also consider using ocean-dark
 Plugin 'ExpandingMan/oceanic-next'
 Plugin 'JuliaEditorSupport/julia-vim'
 Plugin 'scrooloose/nerdtree'
@@ -50,7 +50,16 @@ autocmd bufreadpre *.md setlocal textwidth=160
 autocmd BufRead,BufNewFile *.jl set filetype=julia
 " LaTeX to unicode as you type in julia
 let g:latex_to_unicode_auto = 1
+let g:latex_to_unicode_tab = 1
+" set specific julia version
+" let g:default_julia_version = "0.6"
 
+" toggle LaTeX to unicode key
+nnoremap <expr> <F7> LaTeXtoUnicode#Toggle()
+inoremap <expr> <F7> LaTeXtoUnicode#Toggle()
+
+" fix copy-paste buffers
+set clipboard=unnamedplus
 
 " enable true color
 " note that one should enable true color in tmux if using tmux
@@ -61,6 +70,8 @@ colorscheme OceanicNext
 
 " airline theme
 let g:airline_theme='oceanicnext'
+" airline powerline fonts, must be installed
+let g:airline_powerline_fonts = 1
 
 " some keyboard shortcuts, recall that leader is \ by default
 " nerdtree keyboard shortcut
