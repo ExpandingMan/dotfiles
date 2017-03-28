@@ -6,8 +6,16 @@
 set nocompatible
 filetype off
 set rtp+=~/.config/nvim/bundle/Vundle.vim
+
+" this line is very important for making vundle work correctly
+" if you don't include it, it will use ~/.vim
+" TODO consider switching to https://github.com/Shougo/dein.vim
+call vundle#rc('~/.config/nvim/bundle')
 call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+
 Plugin 'neomake/neomake'
+" note that vundle **always** looks at master, no matter what you do
 Plugin 'ExpandingMan/oceanic-next'
 Plugin 'JuliaEditorSupport/julia-vim'
 Plugin 'scrooloose/nerdtree'
@@ -16,6 +24,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'godlygeek/tabular'
+" remember that you have to run `./install.py` for ycm (running here doesn't
+" work).  also see https://github.com/neovim/neovim/tree/master/contrib/YouCompleteMe
 Plugin 'Valloric/YouCompleteMe'
 
 " fuzzy text searches. installs fzf
@@ -45,7 +55,6 @@ let g:latex_to_unicode_auto = 1
 
 " enable true color
 " note that one should enable true color in tmux if using tmux
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 
 syntax enable
