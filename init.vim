@@ -28,6 +28,10 @@ Plugin 'godlygeek/tabular'
 " work).  also see https://github.com/neovim/neovim/tree/master/contrib/YouCompleteMe
 Plugin 'Valloric/YouCompleteMe'
 
+" nicer csv formatting, not that you can use CSVTabularize to make into a nice
+" table
+Plugin 'chrisbra/csv.vim'
+
 " fuzzy text searches. installs fzf
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}
 Plugin 'junegunn/fzf.vim'
