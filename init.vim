@@ -26,7 +26,9 @@ Plugin 'ryanoasis/vim-devicons'
 Plugin 'godlygeek/tabular'
 " remember that you have to run `./install.py` for ycm (running here doesn't
 " work).  also see https://github.com/neovim/neovim/tree/master/contrib/YouCompleteMe
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
+" one still needs to run :UpdateRemotePlugins manually for this to work
+Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " nicer csv formatting, not that you can use CSVTabularize to make into a nice
 " table
@@ -87,4 +89,8 @@ nmap <silent> <Leader>l :Neomake<CR>
 " overrides settings from color-scheme
 hi Normal guibg=NONE ctermbg=NONE
 
+" turn on deoplete
+let g:deoplete#enable_at_startup = 1
+" deoplete tab completion
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
