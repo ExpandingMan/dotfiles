@@ -29,6 +29,8 @@ Plugin 'godlygeek/tabular'
 " Plugin 'Valloric/YouCompleteMe'
 " one still needs to run :UpdateRemotePlugins manually for this to work
 Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" python completions for deoplete
+Plugin 'zchee/deoplete-jedi'
 
 " nicer csv formatting, not that you can use CSVTabularize to make into a nice
 " table
