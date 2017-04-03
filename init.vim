@@ -93,6 +93,8 @@ nmap <silent> <Leader>l :Neomake<CR>
 " restores transparent background (or whatever is set by gnome-terminal)
 " overrides settings from color-scheme
 hi Normal guibg=NONE ctermbg=NONE
+" ensure transparency stays past end of file
+hi NonText guibg=NONE ctermbg=NONE
 
 " turn on deoplete
 let g:deoplete#enable_at_startup = 1
