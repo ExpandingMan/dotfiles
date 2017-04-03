@@ -16,7 +16,8 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'neomake/neomake'
 " also consider using ocean-dark
-Plugin 'ExpandingMan/oceanic-next'
+" Plugin 'ExpandingMan/oceanic-next'
+Plugin 'dracula/vim'
 Plugin 'JuliaEditorSupport/julia-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
@@ -74,10 +75,12 @@ set clipboard=unnamedplus
 set termguicolors
 
 syntax enable
-colorscheme OceanicNext
+" colorscheme OceanicNext
+colorscheme dracula
 
 " airline theme
-let g:airline_theme='oceanicnext'
+" let g:airline_theme='oceanicnext'
+let g:airline_theme='dracula'
 " airline powerline fonts, must be installed
 let g:airline_powerline_fonts = 1
 
