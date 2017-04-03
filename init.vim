@@ -32,6 +32,10 @@ Plugin 'godlygeek/tabular'
 Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " python completions for deoplete
 Plugin 'zchee/deoplete-jedi'
+" deoplete for Julia, yay!
+Plugin 'JuliaEditorSupport/deoplete-julia'
+" julia linting through neomake
+Plugin 'zyedidia/julialint.vim'
 
 " nicer csv formatting, not that you can use CSVTabularize to make into a nice
 " table
