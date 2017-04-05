@@ -25,6 +25,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 " remember that you have to run `./install.py` for ycm (running here doesn't
 " work).  also see https://github.com/neovim/neovim/tree/master/contrib/YouCompleteMe
 " Plugin 'Valloric/YouCompleteMe'
