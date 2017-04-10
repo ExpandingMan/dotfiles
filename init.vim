@@ -105,4 +105,6 @@ hi NonText guibg=NONE ctermbg=NONE
 let g:deoplete#enable_at_startup = 1
 " deoplete tab completion
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" ensure deoplete automatically closes preview window
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
