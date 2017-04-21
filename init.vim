@@ -89,6 +89,13 @@ let g:airline_theme='dracula'
 " airline powerline fonts, must be installed
 let g:airline_powerline_fonts = 1
 
+" ==== modifications to DRACULA color scheme ====
+" (these only use colors already in the palette)
+" make macros orange
+hi PreProc ctermfg=215 ctermbg=NONE cterm=NONE guifg=#ffb86c guibg=NONE gui=NONE
+" make constants red
+hi Constant ctermfg=NONE ctermbg=NONE cterm=NONE guifg=#ff5555 guibg=NONE gui=NONE
+
 " some keyboard shortcuts, recall that leader is \ by default
 " nerdtree keyboard shortcut
 nmap <silent> <Leader>t :NERDTreeToggle<CR>
