@@ -95,6 +95,8 @@ let g:airline_powerline_fonts = 1
 hi PreProc ctermfg=215 ctermbg=NONE cterm=NONE guifg=#ffb86c guibg=NONE gui=NONE
 " make constants red
 hi Constant ctermfg=NONE ctermbg=NONE cterm=NONE guifg=#ff5555 guibg=NONE gui=NONE
+" make symbols green
+hi Identifier ctermfg=84 ctermbg=NONE cterm=NONE guifg=#50fa7b guibg=NONE gui=italic
 
 " some keyboard shortcuts, recall that leader is \ by default
 " nerdtree keyboard shortcut
