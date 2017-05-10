@@ -117,3 +117,6 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 " ensure deoplete automatically closes preview window
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
+" disable freaky cursor styling
+set guicursor=
+

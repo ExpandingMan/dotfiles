@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/savastio/.oh-my-zsh
+  export ZSH=/home/expandingman/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -121,10 +121,10 @@ export PATH=$PATH:$JULIA_HOME
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$JULIA_HOME/../lib
 
 # alias tmux to set different term variable
-# alias tmux="env TERM=xterm-256color tmux"
+alias tmux="env TERM=xterm-256color tmux"
 
 # start tmux on terminal start
-# [[ $TERM != "screen" ]] && exec tmux
+[[ $TERM != "screen" ]] && exec tmux
 
 # if you have CUDA installed, you'll need this
 # export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/cuda/lib64
