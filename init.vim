@@ -71,6 +71,8 @@ let g:default_julia_version = "0.6"
 " toggle LaTeX to unicode key
 nnoremap <expr> <F7> LaTeXtoUnicode#Toggle()
 inoremap <expr> <F7> LaTeXtoUnicode#Toggle()
+" julia function form toggle
+noremap <Leader>f :call julia#toggle_function_blockassign()<CR>
 
 " fix copy-paste buffers
 set clipboard=unnamedplus
