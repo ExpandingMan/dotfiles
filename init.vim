@@ -122,6 +122,7 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 set guicursor=
 
 " language server
+" Note that one must install LanguageServer.jl in Julia
 let g:LanguageClient_autoStart = 1
 let g:LanguageClient_serverCommands = {
 \   'julia': ['julia', '--startup-file=no', '--history-file=no', '-e', '
