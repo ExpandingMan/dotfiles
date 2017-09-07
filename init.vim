@@ -26,15 +26,10 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-" remember that you have to run `./install.py` for ycm (running here doesn't
-" work).  also see https://github.com/neovim/neovim/tree/master/contrib/YouCompleteMe
-" Plugin 'Valloric/YouCompleteMe'
 " one still needs to run :UpdateRemotePlugins manually for this to work
 Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " python completions for deoplete
 Plugin 'zchee/deoplete-jedi'
-" deoplete for Julia, yay!
-Plugin 'JuliaEditorSupport/deoplete-julia'
 " julia linting through neomake
 Plugin 'zyedidia/julialint.vim'
 
@@ -45,6 +40,10 @@ Plugin 'chrisbra/csv.vim'
 " fuzzy text searches. installs fzf
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}
 Plugin 'junegunn/fzf.vim'
+
+" not yet sure if this will cooperate with deoplete
+Plugin 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+Plugin 'roxma/nvim-completion-manager'
 call vundle#end()
 filetype plugin indent on
 
@@ -122,3 +121,13 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 " disable freaky cursor styling
 set guicursor=
 
+" language server
+let g:LanguageClient_autoStart = 1
+let g:LanguageClient_serverCommands = {
+\   'julia': ['julia', '--startup-file=no', '--history-file=no', '-e', '
+\       using LanguageServer;
+\       server = LanguageServer.LanguageServerInstance(STDIN, STDOUT, false);
+\       server.runlinter = true;
+\       run(server);
+\   '],
+\ }
