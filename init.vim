@@ -128,7 +128,7 @@ let g:LanguageClient_serverCommands = {
 \   'julia': ['julia', '--startup-file=no', '--history-file=no', '-e', '
 \       using LanguageServer;
 \       server = LanguageServer.LanguageServerInstance(STDIN, STDOUT, false);
-\       server.runlinter = true;
+\       server.runlinter = false;
 \       run(server);
 \   '],
 \ }
