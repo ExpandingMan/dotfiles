@@ -42,8 +42,8 @@ Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}
 Plugin 'junegunn/fzf.vim'
 
 " not yet sure if this will cooperate with deoplete
-Plugin 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
-Plugin 'roxma/nvim-completion-manager'
+" Plugin 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+" Plugin 'roxma/nvim-completion-manager'
 call vundle#end()
 filetype plugin indent on
 
