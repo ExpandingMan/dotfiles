@@ -93,11 +93,11 @@ let g:airline_powerline_fonts = 1
 " ==== modifications to DRACULA color scheme ====
 " (these only use colors already in the palette)
 " make macros orange
-hi Identifier ctermfg=215 ctermbg=NONE cterm=NONE guifg=#ffb86c guibg=NONE gui=NONE
+autocmd BufRead,BufNewFile *.jl hi Identifier ctermfg=215 ctermbg=NONE cterm=NONE guifg=#ffb86c guibg=NONE gui=NONE
 " make constants red
-hi Constant ctermfg=NONE ctermbg=NONE cterm=NONE guifg=#ff5555 guibg=NONE gui=NONE
+autocmd BufRead,BufNewFile *.jl hi Constant ctermfg=NONE ctermbg=NONE cterm=NONE guifg=#ff5555 guibg=NONE gui=NONE
 " make symbols green
-hi PreProc ctermfg=84 ctermbg=NONE cterm=NONE guifg=#50fa7b guibg=NONE gui=italic
+autocmd BufRead,BufNewFile *.jl hi PreProc ctermfg=84 ctermbg=NONE cterm=NONE guifg=#50fa7b guibg=NONE gui=italic
 
 " some keyboard shortcuts, recall that leader is \ by default
 " nerdtree keyboard shortcut
