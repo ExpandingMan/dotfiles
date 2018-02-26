@@ -65,7 +65,7 @@ autocmd BufRead,BufNewFile *.jl set filetype=julia
 let g:latex_to_unicode_auto = 1
 let g:latex_to_unicode_tab = 1
 " set specific julia version
-let g:default_julia_version = "0.6"
+let g:default_julia_version = "0.7"
 
 " toggle LaTeX to unicode key
 nnoremap <expr> <F7> LaTeXtoUnicode#Toggle()
