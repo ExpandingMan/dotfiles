@@ -113,12 +113,19 @@ stty -ixon
 # julia multithreading
 # export JULIA_NUM_THREADS=6
 
-# these are needed if julia is not installed through apt
-export JULIA_HOME=/opt/julia/bin
+export JULIA_BINDIR=/opt/julia/bin
 
-export PATH=$PATH:$JULIA_HOME
+export PATH=$PATH:$JULIA_BINDIR
 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$JULIA_HOME/../lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$JULIA_BINDIR/../lib
+
+export JULIA_HOME=/opt/julia0p6/bin
+alias julia6="/opt/julia0p6/bin/julia"
+# need library path also for now
+
+export JULIA_EDITOR=nvim
+export EDITOR=nvim
+export VISUAL=nvim
 
 # alias tmux to set different term variable
 alias tmux="env TERM=xterm-256color tmux"
