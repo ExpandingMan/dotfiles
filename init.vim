@@ -84,6 +84,12 @@ syntax enable
 " colorscheme OceanicNext
 colorscheme dracula
 
+" restores transparent background (or whatever is set by gnome-terminal)
+" overrides settings from color-scheme
+hi Normal guibg=NONE ctermbg=NONE
+" ensure transparency stays past end of file
+hi NonText guibg=NONE ctermbg=NONE
+
 " airline theme
 " let g:airline_theme='oceanicnext'
 let g:airline_theme='dracula'
@@ -95,21 +101,16 @@ let g:airline_powerline_fonts = 1
 " make macros orange
 autocmd BufRead,BufNewFile *.jl hi Identifier ctermfg=215 ctermbg=NONE cterm=NONE guifg=#ffb86c guibg=NONE gui=NONE
 " make constants red
-autocmd BufRead,BufNewFile *.jl hi Constant ctermfg=NONE ctermbg=NONE cterm=NONE guifg=#ff5555 guibg=NONE gui=NONE
-" make symbols green
-autocmd BufRead,BufNewFile *.jl hi PreProc ctermfg=84 ctermbg=NONE cterm=NONE guifg=#50fa7b guibg=NONE gui=italic
+autocmd BufRead,BufNewFile *.jl hi Constant ctermfg=Red ctermbg=NONE cterm=NONE guifg=#ff5555 guibg=NONE gui=NONE
+" make macros green
+" autocmd BufRead,BufNewFile *.jl hi PreProc ctermfg=84 ctermbg=NONE cterm=NONE guifg=#50fa7b guibg=NONE gui=italic
+autocmd BufRead,BufNewFile *.jl hi Macro ctermfg=84 ctermbg=NONE cterm=NONE guifg=#50fa7b guibg=NONE gui=italic
 
 " some keyboard shortcuts, recall that leader is \ by default
 " nerdtree keyboard shortcut
 nmap <silent> <Leader>t :NERDTreeToggle<CR>
 " neomake keyboard shortcut
 nmap <silent> <Leader>l :Neomake<CR>
-
-" restores transparent background (or whatever is set by gnome-terminal)
-" overrides settings from color-scheme
-hi Normal guibg=NONE ctermbg=NONE
-" ensure transparency stays past end of file
-hi NonText guibg=NONE ctermbg=NONE
 
 " turn on deoplete
 let g:deoplete#enable_at_startup = 1
