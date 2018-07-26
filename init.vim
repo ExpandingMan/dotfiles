@@ -81,7 +81,8 @@ set clipboard=unnamedplus
 set termguicolors
 
 syntax enable
-" colorscheme OceanicNext
+" disable dracula italics because they look weird
+let g:dracula_italic = 0
 colorscheme dracula
 
 " restores transparent background (or whatever is set by gnome-terminal)
@@ -104,7 +105,7 @@ autocmd BufRead,BufNewFile *.jl hi Identifier ctermfg=215 ctermbg=NONE cterm=NON
 autocmd BufRead,BufNewFile *.jl hi Constant ctermfg=Red ctermbg=NONE cterm=NONE guifg=#ff5555 guibg=NONE gui=NONE
 " make macros green
 " autocmd BufRead,BufNewFile *.jl hi PreProc ctermfg=84 ctermbg=NONE cterm=NONE guifg=#50fa7b guibg=NONE gui=italic
-autocmd BufRead,BufNewFile *.jl hi Macro ctermfg=84 ctermbg=NONE cterm=NONE guifg=#50fa7b guibg=NONE gui=italic
+autocmd BufRead,BufNewFile *.jl hi Macro ctermfg=84 ctermbg=NONE cterm=NONE guifg=#50fa7b guibg=NONE gui=NONE
 
 " some keyboard shortcuts, recall that leader is \ by default
 " nerdtree keyboard shortcut
