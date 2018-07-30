@@ -160,6 +160,10 @@ bar {
 
 bindsym $mod+x exec "i3lock -c 000000 -n"
 
+# move workspaces between monitors
+bindsym $mod+Shift+greater move workspace to output right
+bindsym $mod+Shift+less move workspace to output left
+
 
 # monitor config
 workspace 1 output eDP-1
