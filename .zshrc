@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/expandingman/.oh-my-zsh
+export ZSH=/home/expandingman/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -53,7 +53,8 @@ plugins=(git)
 
 # User configuration
 
-  export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/dell/srvadmin/bin"
+# TODO why the fuck does this not re-export PATH?
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/dell/srvadmin/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -65,30 +66,11 @@ export PATH="${PATH}:${GUROBI_HOME}/bin"
 export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
 export GRB_LICENSE_FILE="${GUROBI_HOME}/gurobi.lic"
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # safer deleting
 alias rm="rm -i"
@@ -104,12 +86,6 @@ function git_prompt_info() {
 # I forget exactly what this did, but it fixed something
 stty -ixon
 
-# this is a ridiculous measure that is needed for my DBInterface module
-# export PYTHONPATH=$PYTHONPATH:/home/savastio/DBInterface/python
-
-# MXNet needs this because it's being a bitch
-# export MXNET_HOME=/home/savastio/mxnet
-
 # julia multithreading
 # export JULIA_NUM_THREADS=6
 
@@ -123,15 +99,17 @@ export JULIA_HOME=/opt/julia0p6/bin
 alias julia6="/opt/julia0p6/bin/julia"
 # need library path also for now
 
+# set all editors to nvim
 export JULIA_EDITOR=nvim
 export EDITOR=nvim
 export VISUAL=nvim
 
-# alias tmux to set different term variable
-alias tmux="env TERM=xterm-256color tmux"
 
+# tmux stuff: not used with i3.  WARNING can break terminal!
+# alias tmux to set different term variable
+# alias tmux="env TERM=xterm-256color tmux"
 # start tmux on terminal start
-[[ $TERM != "screen" ]] && exec tmux
+# [[ $TERM != "screen" ]] && exec tmux
 
 # if you have CUDA installed, you'll need this
 # export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/cuda/lib64
