@@ -13,12 +13,18 @@ dracula-red = #ff5555
 dracula-yellow = #f1fa8c
 
 
+# these values need to be set on each machine
+[network-interfaces]
+eth1 = enp2s0f0
+wlan1 = wlp3s0b1
+
+
 [bar/bar]
 monitor = ${env:MONITOR:}
 
-font-0 = "Monospace Regular:pixelsize=10;2.25"
+font-0 = "Monospace Regular:pixelsize=9;2.25"
 # requires ttf-font-awesome and otf-font-awesome
-font-1 = "Font Awesome 5 Free:pixelsize=10;3"
+font-1 = "Font Awesome 5 Free:pixelsize=9;2.25"
 font-2 = "Font Awesome 5 Free Solid:pixelsize=10;3"
 font-3 = "Font Awesome 5 Brands:pixelsize=10;3"
 
@@ -37,6 +43,8 @@ background = ${colors.dracula-background}
 foreground = ${colors.dracula-foreground}
 
 radius = 0.0
+
+separator = "  |  "
 
 # border-top-size = 2
 # border-color = ${colors.dracula-selection}
@@ -80,7 +88,7 @@ label-urgent-padding = 1
 [module/date]
 type = internal/date
 interval = 5.0
-date = %Y-%m-%dT%H:%M:%S
+date = %Y-%m-%d %H:%M:%S
 time = $H:%M:%S
 
 
@@ -88,10 +96,12 @@ time = $H:%M:%S
 type = internal/battery
 full-at = 99
 poll-interval = 10
-format-charging = <label-charging> <ramp-capacity>
-label-charging = %{T3}%{T-}
-format-discharging = <ramp-capacity>
-format-full = <ramp-capacity>
+format-charging = <ramp-capacity> <label-charging>
+label-charging = %{T3}%{T-} %percentage%%
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = %percentage%%
+format-full = <ramp-capacity> <label-full>
+label-full = %percentage%%
 
 ramp-capacity-0 = %{T3}%{T-}
 ramp-capacity-1 = %{T3}%{T-}
@@ -99,6 +109,43 @@ ramp-capacity-2 = %{T3}%{T-}
 ramp-capacity-3 = %{T3}%{T-}
 ramp-capacity-4 = %{T3}%{T-}
 
+
+[module/memory]
+type = internal/memory
+
+interval = 3
+
+format = <label>
+label = %{T3}%{T-} %gb_used%/%gb_total% (%percentage_used%%)
+
+
+[module/cpu]
+type = internal/cpu
+interval = 1.0
+
+format = <label>
+
+label = %{T3}%{T-} %percentage-cores%
+
+
+[module/wired-network]
+type = internal/network
+interface = ${network-interfaces.eth1}
+
+interval = 3.0
+
+format-connected = <label-connected>
+label-connected = %{T3}%{T-} %local_ip% (%downspeed%)
+
+
+[module/wireless-network]
+type = internal/network
+interface = ${network-interfaces.wlan1}
+
+interval = 3.0
+
+format-connected = <label-connected>
+label-connected = %{T3}%{T-} %signal%% %essid% %local_ip% (%downspeed%)
 
 [module/title]
 type = internal/xwindow
