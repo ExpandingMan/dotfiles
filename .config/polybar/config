@@ -1,0 +1,107 @@
+[colors]
+dracula-background = #282a36
+dracula-current-line = #44475a
+dracula-selection = #44475a
+dracula-foreground = #f8f8f2
+dracula-comment = #6272a4
+dracula-cyan = #8be9fd
+dracula-green = #50fa7b
+dracula-orange = #ffb86c
+dracula-pink = #ff79c6
+dracula-purple = #bd93f9
+dracula-red = #ff5555
+dracula-yellow = #f1fa8c
+
+
+[bar/bar]
+monitor = ${env:MONITOR:}
+
+font-0 = "Monospace Regular:pixelsize=10;2.25"
+# requires ttf-font-awesome and otf-font-awesome
+font-1 = "Font Awesome 5 Free:pixelsize=10;3"
+font-2 = "Font Awesome 5 Free Solid:pixelsize=10;3"
+font-3 = "Font Awesome 5 Brands:pixelsize=10;3"
+
+bottom = true
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+fixed-center = false
+
+width = 100%
+height = 0.6%:+16
+
+# dracula colors
+background = ${colors.dracula-background}
+foreground = ${colors.dracula-foreground}
+
+radius = 0.0
+
+# border-top-size = 2
+# border-color = ${colors.dracula-selection}
+
+modules-left = i3
+modules-center = date
+modules-right = wired-network wireless-network cpu memory battery
+
+
+[module/i3]
+type = internal/i3
+# only show workspaces on same monitor
+pin-workspaces = true
+
+enable-click = true
+enable-scroll = true
+
+strip-wsnumbers = true
+format = <label-state> <label-mode>
+
+label-focused = %index%
+label-focused-foreground = ${colors.dracula-cyan}
+label-focused-background = ${colors.dracula-selection}
+label-focused-underline = ${colors.dracula-selection}
+label-focused-padding = 1
+
+label-unfocused = %index%
+label-unfocused-padding = 1
+
+label-visible = %index%
+label-visible-foreground = ${colors.dracula-comment}
+label-visible-underline = ${colors.dracula-selection}
+label-visible-padding = 1
+
+label-urgent = %index%
+label-urgent-foreground = ${colors.dracula-foreground}
+label-urgent-background = ${colors.dracula-red}
+label-urgent-padding = 1
+
+
+[module/date]
+type = internal/date
+interval = 5.0
+date = %Y-%m-%dT%H:%M:%S
+time = $H:%M:%S
+
+
+[module/battery]
+type = internal/battery
+full-at = 99
+poll-interval = 10
+format-charging = <label-charging> <ramp-capacity>
+label-charging = %{T3}%{T-}
+format-discharging = <ramp-capacity>
+format-full = <ramp-capacity>
+
+ramp-capacity-0 = %{T3}%{T-}
+ramp-capacity-1 = %{T3}%{T-}
+ramp-capacity-2 = %{T3}%{T-}
+ramp-capacity-3 = %{T3}%{T-}
+ramp-capacity-4 = %{T3}%{T-}
+
+
+[module/title]
+type = internal/xwindow
+format-foreground = ${colors.dracula-background}
+format-padding = 1
+label-maxlen = 50
