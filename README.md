@@ -29,6 +29,14 @@ networks.  Typically I will use `nmcli` to manage my wifi, e.g. `nmcli connectio
 This is a nice utility for taking screenshots.  Note that my `i3` keybindings for this by default are `Print` for taking a full screenshot, `$mod+Print` for
 just the current window, and `Shift+Print` for a little box that you can select with the mouse.  The output will be put in `~/Pictures/screenshots`.
 
+### `amixer`
+This is for controlling audio output, usually the OS will use this by default.  I need to make keybindings within `i3` at some point. In the meantime, you can
+increase or decrease volume with `amixer set Master x%±`.
+
+### `mps-youtube`
+Binary called `mpsyt`, this is a nice way of browsing YouTube from the command line and watching videos with VLC or another player.
+
+
 ### Required
 The following are required for my default setup
 - `i3-gaps` (equivalently `i3` should work just fine)
