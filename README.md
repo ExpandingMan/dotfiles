@@ -1,6 +1,13 @@
 # dotfiles
-The intention is to make it pretty easy to reproduce my linux installs with only what is in this repository.  Lately I'm tending toward Manjaro, but
-historically I've used Ubuntu quite a lot, nothing here should be very distro specific.
+The intention is to make it pretty easy to reproduce my linux installs with only what is in this repository.
+
+## Distro
+I've very quickly come to prefer Manjaro for a number of reasons, in particular that it seems to have amazingly worry-free hardware setup even for nVidia.
+Historically I've used Ubuntu quite a lot, but lately am getting rather fed up with the update model among other things.
+
+For the most part everything described here should be more-or-less distro agnostic, but it'll probably be easiest on Arch branches.  Currently the one known
+major headache on Ubuntu is that on Ubuntu one has to compile `polybar`.  This is a big pain because `polybar` depends on `libxcb` and in the Ubuntu repos that
+library is split into about a billion different packages, so you'll be spending a good amount of time figuring out which ones you need.
 
 ## Applications
 Here is a list of some useful applications that I would like to remember exist
@@ -18,6 +25,10 @@ right in the terminal.  Note that you should use the config files found in this 
 This is a command line interface for the network manager.  Note also that `nmtui` opens a little DOS-like menu that lets you open connections to new wifi
 networks.  Typically I will use `nmcli` to manage my wifi, e.g. `nmcli connection up tristero5`.
 
+### `scrot`
+This is a nice utility for taking screenshots.  Note that my `i3` keybindings for this by default are `Print` for taking a full screenshot, `$mod+Print` for
+just the current window, and `Shift+Print` for a little box that you can select with the mouse.  The output will be put in `~/Pictures/screenshots`.
+
 ### Required
 The following are required for my default setup
 - `i3-gaps` (equivalently `i3` should work just fine)
@@ -26,6 +37,11 @@ The following are required for my default setup
 - `feh`
 - `ttf-font-awesome` (these are icon fonts used by the `polybar`)
 - `nvim` (my default editor I use for everything)
+
+## Directory Structure
+Currently the only non-standard directories that will be expected by something are
+- `~/Pictures/backgrounds/` (by `feh` for backgrounds)
+- `~/Pictures/screenshots/` (by `scrot` for screenshots)
 
 
 ## Colors

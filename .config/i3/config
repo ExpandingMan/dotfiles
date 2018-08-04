@@ -211,6 +211,13 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# screenshots
+# take screenshot of entire monitor output
+bindsym Print exec "scrot -e 'mv $f ~/Pictures/screenshots'"
+# take screenshot of current window
+bindsym $mod+Print exec "scrot -u -e 'mv $f ~/Pictures/screenshots'"
+# take screenshot of selectable box (with mouse)
+bindsym --release Shift+Print exec "scrot -s -e 'mv $f ~/Pictures/screenshots'"
 
 # hide/unhide i3status bar
 bindsym $mod+m bar mode toggle
