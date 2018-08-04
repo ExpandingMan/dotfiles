@@ -72,10 +72,11 @@ label-focused-underline = ${colors.dracula-selection}
 label-focused-padding = 1
 
 label-unfocused = %index%
+label-unfocused-foreground = ${colors.dracula-comment}
 label-unfocused-padding = 1
 
 label-visible = %index%
-label-visible-foreground = ${colors.dracula-comment}
+label-visible-foreground = ${colors.dracula-foreground}
 label-visible-underline = ${colors.dracula-selection}
 label-visible-padding = 1
 
