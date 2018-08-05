@@ -51,7 +51,7 @@ separator = "  |  "
 
 modules-left = i3
 modules-center = date
-modules-right = wired-network wireless-network cpu memory battery
+modules-right = wired-network wireless-network cpu memory alsa battery
 
 
 [module/i3]
@@ -147,6 +147,22 @@ interval = 3.0
 
 format-connected = <label-connected>
 label-connected = %{T3}%{T-} %signal%% %essid% %local_ip% (%downspeed%)
+
+
+[module/alsa]
+type = internal/alsa
+# find card numbers in `/proc/asound/cards`
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default
+master-mixer = Master
+format-volume = <label-volume>
+label-volume = %{T3}%{T-} %percentage%%
+
+format-muted = <label-muted>
+label-muted = %{T3}%{T-}
+label-muted-foreground = ${colors.dracula-selection}
+
 
 [module/title]
 type = internal/xwindow

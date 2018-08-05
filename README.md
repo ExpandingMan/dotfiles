@@ -52,7 +52,7 @@ Currently the only non-standard directories that will be expected by something a
 - `~/Pictures/screenshots/` (by `scrot` for screenshots)
 
 
-## Colors
+## Colors and Appearance
 Currently I'm using the [dracula](https://github.com/dracula/dracula-theme) everywhere mostly because it's *unbelievably well-supported* and, unlike many color
 schemes, actually has good enough contrast for me to be happy with it in vim.  I'd basically describe it as "neon that doesn't look too 80's".  The dracula
 colors are currently hard-coded into my `init.vim` (via the `dracula.vim` package), `i3/config` and `polybar/config`, which is certainly not ideal.  The only
@@ -62,6 +62,9 @@ place a user would need to change the colors manually is on the terminal itself.
 ### Backgrounds
 It is expected that you keep your backgrounds in `$HOME/Pictures/backgrounds`.  The `.fehbg` will randomly assign them when the session starts (called by `i3`).
 I like to use a huge number of different backgrounds, the only rule is that they all be somehow "sci-fi" themed (especially spaceships!).
+
+### Fonts
+I mostly use `Monospace Regular`, mostly because it has really good unicode.
 
 ### Future Plans
 The current situation with the colors is highly unsatisfactory.  There are some nice tools for assigning colors using images as references using clustering of
