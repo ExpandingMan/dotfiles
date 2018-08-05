@@ -62,6 +62,9 @@ floating_modifier $mod
 exec --no-startup-id "export TERMINAL=gnome-terminal"
 bindsym $mod+Return exec gnome-terminal
 
+# start a Julia REPL
+bindsym $mod+F1 exec "gnome-terminal -e /opt/julia/bin/julia"
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -210,6 +213,15 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+# volume and audio
+bindsym XF86AudioRaiseVolume exec "amixer -q set Master 5%+ unmute"
+bindsym XF86AudioLowerVolume exec "amixer -q set Master 5%- unmute"
+bindsym XF86AudioMute exec "amixer -q set Master mute"
+bindsym XF86AudioPlay exec "playerctl play-pause"
+bindsym XF86AudioNext exec "playerctl next"
+bindsym XF86AudioPrev exec "playerctl previous"
+
 
 # screenshots
 # take screenshot of entire monitor output

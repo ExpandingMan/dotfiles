@@ -72,6 +72,12 @@ insert my colors.  Hopefully I will come up with some way to clean up the proces
 My new colors will probably be some sort of bluish think with cyan and orange highlights.
 
 
+## Julia
+I use [Julia](https://julialang.org) extensively, in the long run I expect it to be much more intimately intertwined with this setup.  Note that for now the
+Julia binaries are expected to be in `/opt/julia/bin` (at some point I will have more permanent system-wide environment variables).  You can use `$mod+F1` to
+launch a new Julia REPL.
+
+
 ## How-To
 Here is a list of useful things that I often forget how to do:
 
