@@ -12,12 +12,16 @@ library is split into about a billion different packages, so you'll be spending 
 ## Applications
 Here is a list of some useful applications that I would like to remember exist
 
+### [`qutebrowser`](https://wiki.archlinux.org/index.php/Qutebrowser)
+A vim-like browser.  Initially I was just using a vim plugin called tridactyl for firefox, but I was surprised how well qutebrowser works.  I have a
+configuration for it here.  The one major disadvantage that I can see is that the ad blocking needs improvement.
+
 ### `arandr`
 This is pretty crucial for `i3`.  `arandr` is a simple GUI that lets you arrange the layout of your display output and change resolutions.  `arandr` works by
 generating a 1-line script containing the necessary `xrandr` command.  To make this script execute whenever `i3` starts you can just put a line in your
 `config`.
 
-### `ranger`
+### [`ranger`](https://wiki.archlinux.org/index.php/Ranger)
 This is a simple file browser a bit like from the DOS days.  The main usefulness of this is that you can use it to preview all sorts of things including images
 right in the terminal.  Note that you should use the config files found in this repo, and you may need `w3m` installed for previews to work.
 
@@ -33,8 +37,11 @@ just the current window, and `Shift+Print` for a little box that you can select 
 This is for controlling audio output, usually the OS will use this by default.  I need to make keybindings within `i3` at some point. In the meantime, you can
 increase or decrease volume with `amixer set Master x%±`.
 
+### [`mpv`](https://wiki.archlinux.org/index.php/Mpv)
+A really nice minimalistic media player.
+
 ### `mps-youtube`
-Binary called `mpsyt`, this is a nice way of browsing YouTube from the command line and watching videos with VLC or another player.
+Binary called `mpsyt`, this is a nice way of browsing YouTube from the command line and watching videos with VLC, mpv or another player.
 
 
 ### Required
