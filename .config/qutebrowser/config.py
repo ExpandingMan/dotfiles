@@ -11,7 +11,7 @@ config.set('content.javascript.enabled', True, 'chrome://*/*')
 config.set('content.javascript.enabled', True, 'qute://*/*')
 
 # general
-c.editor.command = ["gnome-terminal", "-x", "nvim", "-f", "{}"]
+c.editor.command = ["gnome-terminal", "--wait", "-x", "nvim", "-f", "{}"]
 
 # fingerprinting
 #c.content.headers.user_agent = ""  # empty is the default
