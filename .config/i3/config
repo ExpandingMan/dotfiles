@@ -18,9 +18,9 @@ set $dracula_yellow      #f1fa8c
 
 
 # colors                    border               back                text                 indicator            child_border
-client.focused              $back2black          $dracula_background $dracula_cyan        $dracula_cyan        $dracula_background
-client.focused_inactive     $back2black          $dracula_background $dracula_comment     $dracula_selection   $back2black
-client.unfocused            $back2black          $back2black         $dracula_comment     $dracula_comment     $back2black
+client.focused              $back2black          $dracula_background $dracula_cyan        $dracula_background  $dracula_background
+client.focused_inactive     $back2black          $dracula_background $dracula_comment     $dracula_background  $back2black
+client.unfocused            $back2black          $back2black         $dracula_comment     $dracula_background  $back2black
 client.urgent               $dracula_red         $dracula_background $dracula_red         $dracula_red         $dracula_background
 client.placeholder          $back2black          $back2black         $dracula_orange      $dracula_orange      $back2black
 client.background           $back2black

@@ -66,6 +66,8 @@ colors are currently hard-coded into my `init.vim` (via the `dracula.vim` packag
 place a user would need to change the colors manually is on the terminal itself.  Since I use `gnome-terminal`, one can use
 [dracula/gnome-terminal](https://github.com/dracula/gnome-terminal).
 
+See this [useful color configurator](https://thomashunter.name/i3-configurator/) for `i3`.
+
 ### Backgrounds
 It is expected that you keep your backgrounds in `$HOME/Pictures/backgrounds`.  The `.fehbg` will randomly assign them when the session starts (called by `i3`).
 I like to use a huge number of different backgrounds, the only rule is that they all be somehow "sci-fi" themed (especially spaceships!).
@@ -79,7 +81,7 @@ the pixels such as [pywal](https://github.com/dylanarapas/pywal) but frankly the
 point I'm going to carefully create my own color scheme (I've found that this is much harder than it sounds).  I will fork the aforementioned dracula repos and
 insert my colors.  Hopefully I will come up with some way to clean up the process a bit when I do so.
 
-My new colors will probably be some sort of bluish think with cyan and orange highlights.
+My new colors will probably be some sort of bluish thing with cyan and orange highlights.
 
 
 ## Julia
