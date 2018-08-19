@@ -19,6 +19,7 @@ c.editor.command = ["gnome-terminal", "--wait", "-x", "nvim", "-f", "{}"]
 c.content.headers.user_agent = "Mozilla/5.0 (Windows NT 6.1; rv:52.0) Gecko/20100101 Firefox/52.0" 
 c.content.headers.custom = {} # empty is the default
 # generic HTTP_ACCEPT header
+# TODO there is currently a default header that can't be deleted, only appended to. raise issue?
 # c.content.headers.custom = {"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"}
 c.content.canvas_reading = False
 
@@ -26,8 +27,14 @@ c.content.canvas_reading = False
 c.url.searchengines["d"] = "https://duckduckgo.com/?q={}"
 c.url.searchengines["yt"] = "https://www.youtube.com/results?search_query={}"
 c.url.searchengines["w"] = "https://en.wikipedia.org/wiki/Special:Search/{}" 
-c.url.searchengines["gh"] = "https://github.com/search?q={}&type=Code"
+c.url.searchengines["gh"] = "https://github.com/search?q={}"
 c.url.searchengines["a"] = "https://wiki.archlinux.org/?search={}"
+c.url.searchengines["arx"] = "https://arxiv.org/search/?query={}"
+c.url.searchengines["jl"] = "https://docs.julialang.org/en/stable/search/?q={}"
+c.url.searchengines["wa"] = "https://www.wolframalpha.com/input/?i={}"
+
+# commands
+config.bind(";v", "hint links spawn mpv {hint-url}")  # view video with mpv
 
 # fonts
 c.fonts.tabs = "9pt Monospace Regular"
