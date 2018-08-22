@@ -94,3 +94,4 @@ launch a new Julia REPL.
 Here is a list of useful things that I often forget how to do:
 
 - `ldconfig -p`: Lists all libraries in library paths. For example do `ldconfig -p | grep libsdl` to find SDL libraries.
+- `ldd`: Lists all the libraries that a binary wants to load.
