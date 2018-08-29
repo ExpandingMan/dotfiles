@@ -16,17 +16,17 @@ c.editor.command = ["gnome-terminal", "--wait", "-x", "nvim", "-f", "{}"]
 # fingerprinting
 #c.content.headers.user_agent = ""  # empty is the default
 # generic user agent
-c.content.headers.user_agent = "Mozilla/5.0 (Windows NT 6.1; rv:52.0) Gecko/20100101 Firefox/52.0" 
+c.content.headers.user_agent = "Mozilla/5.0 (Windows NT 6.1; rv:52.0) Gecko/20100101 Firefox/52.0"
 c.content.headers.custom = {} # empty is the default
 # generic HTTP_ACCEPT header
-# TODO there is currently a default header that can't be deleted, only appended to. raise issue?
 # c.content.headers.custom = {"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"}
+c.content.headers.custom = {"accept": "text/html, */*; q=0.01 gzip, deflate, br en-US,en;q=0.5"}
 c.content.canvas_reading = False
 
 # searchengines
 c.url.searchengines["d"] = "https://duckduckgo.com/?q={}"
 c.url.searchengines["yt"] = "https://www.youtube.com/results?search_query={}"
-c.url.searchengines["w"] = "https://en.wikipedia.org/wiki/Special:Search/{}" 
+c.url.searchengines["w"] = "https://en.wikipedia.org/wiki/Special:Search/{}"
 c.url.searchengines["gh"] = "https://github.com/search?q={}"
 c.url.searchengines["a"] = "https://wiki.archlinux.org/?search={}"
 c.url.searchengines["arx"] = "https://arxiv.org/search/?query={}"
@@ -39,7 +39,7 @@ config.bind(";v", "hint links spawn mpv {hint-url}")  # view video with mpv
 # fonts
 c.fonts.tabs = "9pt Monospace Regular"
 c.fonts.statusbar = "9pt Monospace Regular"
-c.fonts.downloads = c.fonts.statusbar 
+c.fonts.downloads = c.fonts.statusbar
 c.fonts.prompts = c.fonts.statusbar
 c.fonts.hints = "13px Monospace Regular"
 c.fonts.messages.info = "10pt Monospace Regular"
