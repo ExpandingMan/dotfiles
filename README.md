@@ -32,6 +32,9 @@ networks.  Typically I will use `nmcli` to manage my wifi, e.g. `nmcli connectio
 ### `inxi`
 This is a very useful tool for telling you about your hardware configuration.  For example, `inxi -G` tells you about your graphics setup.
 
+### `sensors`
+Just what it sounds like, shows output of system sensors.  Gives temperatures and fan speeds where available.
+
 ### `scrot`
 This is a nice utility for taking screenshots.  Note that my `i3` keybindings for this by default are `Print` for taking a full screenshot, `$mod+Print` for
 just the current window, and `Shift+Print` for a little box that you can select with the mouse.  The output will be put in `~/Pictures/screenshots`.
