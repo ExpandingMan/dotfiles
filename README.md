@@ -29,6 +29,9 @@ right in the terminal.  Note that you should use the config files found in this 
 This is a command line interface for the network manager.  Note also that `nmtui` opens a little DOS-like menu that lets you open connections to new wifi
 networks.  Typically I will use `nmcli` to manage my wifi, e.g. `nmcli connection up tristero5`.
 
+### `inxi`
+This is a very useful tool for telling you about your hardware configuration.  For example, `inxi -G` tells you about your graphics setup.
+
 ### `scrot`
 This is a nice utility for taking screenshots.  Note that my `i3` keybindings for this by default are `Print` for taking a full screenshot, `$mod+Print` for
 just the current window, and `Shift+Print` for a little box that you can select with the mouse.  The output will be put in `~/Pictures/screenshots`.
