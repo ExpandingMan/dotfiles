@@ -90,6 +90,11 @@ insert my colors.  Hopefully I will come up with some way to clean up the proces
 My new colors will probably be some sort of bluish thing with cyan and orange highlights.
 
 
+## Manjaro `i3` Dotfiles
+The dot files for the Manjaro `i3` community setup can be found
+[here](https://gitlab.manjaro.org/profiles-and-settings/desktop-settings/tree/master/community/i3/skel).  This is probably a good starting point for a great
+many things.  More generally, default Manjaro desktop settings can be found at https://gitlab.manjaro.org/profiles-and_settings/desktop-settings .
+
 ## Julia
 I use [Julia](https://julialang.org) extensively, in the long run I expect it to be much more intimately intertwined with this setup.  Note that for now the
 Julia binaries are expected to be in `/opt/julia/bin` (at some point I will have more permanent system-wide environment variables).  You can use `$mod+F1` to
