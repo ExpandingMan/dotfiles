@@ -2,8 +2,15 @@
 
 ### show all relevant system config info from `inxi`
 ```
-inxi -SMGxxx
+inxi -SMGxxxz
 ```
+
+### Arch Wiki
+Some very important articles on the Arch wiki for troubleshooting
+- [Xorg](https://wiki.archlinux.org/index.php/Xorg)
+- [TLP](https://wiki.archlinux.org/index.php/TLP)
+- [NVIDIA](https://wiki.archlinux.org/index.php/NVIDIA)
+- [NVIDIA Optimus](https://wiki.archlinux.org/index.php/NVIDIA_Optimus)
 
 ### X.org info
 ```
