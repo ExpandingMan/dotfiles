@@ -11,6 +11,7 @@ Some very important articles on the Arch wiki for troubleshooting
 - [TLP](https://wiki.archlinux.org/index.php/TLP)
 - [NVIDIA](https://wiki.archlinux.org/index.php/NVIDIA)
 - [NVIDIA Optimus](https://wiki.archlinux.org/index.php/NVIDIA_Optimus)
+- [Intel Graphics](https://wiki.archlinux.org/index.php/Intel_graphics)
 
 ### X.org info
 ```
