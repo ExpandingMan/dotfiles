@@ -32,6 +32,7 @@ Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plugin 'zchee/deoplete-jedi'
 " julia linting through neomake
 Plugin 'zyedidia/julialint.vim'
+Plugin 'cespare/vim-toml'
 
 " nicer csv formatting, not that you can use CSVTabularize to make into a nice
 " table
