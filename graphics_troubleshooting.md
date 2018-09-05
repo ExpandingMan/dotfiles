@@ -12,6 +12,8 @@ Some very important articles on the Arch wiki for troubleshooting
 - [NVIDIA](https://wiki.archlinux.org/index.php/NVIDIA)
 - [NVIDIA Optimus](https://wiki.archlinux.org/index.php/NVIDIA_Optimus)
 - [Intel Graphics](https://wiki.archlinux.org/index.php/Intel_graphics)
+- [Kernel Modules](https://wiki.archlinux.org/index.php/Kernel_module)
+- [GRUB](https://wiki.archlinux.org/index.php/GRUB)
 
 ### X.org info
 ```
