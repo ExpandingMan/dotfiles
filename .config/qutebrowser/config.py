@@ -28,6 +28,7 @@ c.url.searchengines["d"] = "https://duckduckgo.com/?q={}"
 c.url.searchengines["yt"] = "https://www.youtube.com/results?search_query={}"
 c.url.searchengines["w"] = "https://en.wikipedia.org/wiki/Special:Search/{}"
 c.url.searchengines["gh"] = "https://github.com/search?q={}"
+c.url.searchengines["gl"] = "https://gitlab.com/search?utf8=%E2%9C%93&search={}&group_id=&project_id=&repository_ref="
 c.url.searchengines["a"] = "https://wiki.archlinux.org/?search={}"
 c.url.searchengines["arx"] = "https://arxiv.org/search/?query={}"
 c.url.searchengines["jl"] = "https://docs.julialang.org/en/stable/search/?q={}"
@@ -37,12 +38,12 @@ c.url.searchengines["wa"] = "https://www.wolframalpha.com/input/?i={}"
 config.bind(";v", "hint links spawn mpv {hint-url}")  # view video with mpv
 
 # fonts
-c.fonts.tabs = "9pt Monospace Regular"
-c.fonts.statusbar = "9pt Monospace Regular"
+c.fonts.tabs = "12pt Monospace Regular"
+c.fonts.statusbar = "12pt Monospace Regular"
 c.fonts.downloads = c.fonts.statusbar
 c.fonts.prompts = c.fonts.statusbar
-c.fonts.hints = "13px Monospace Regular"
-c.fonts.messages.info = "10pt Monospace Regular"
+c.fonts.hints = "12pt Monospace Regular"
+c.fonts.messages.info = "12pt Monospace Regular"
 c.fonts.keyhint = c.fonts.messages.info
 c.fonts.messages.warning = c.fonts.messages.info
 c.fonts.messages.error = c.fonts.messages.info
