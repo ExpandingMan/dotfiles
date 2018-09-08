@@ -46,6 +46,9 @@ increase or decrease volume with `amixer set Master x%±`.
 ### [`mpv`](https://wiki.archlinux.org/index.php/Mpv)
 A really nice minimalistic media player.
 
+### `pacui`
+An amazing little `pacman` utility for browsing things like dependency trees, file locations and config files.  Also see `pacli`.
+
 ### `mps-youtube`
 Binary called `mpsyt`, this is a nice way of browsing YouTube from the command line and watching videos with VLC, mpv or another player.
 
