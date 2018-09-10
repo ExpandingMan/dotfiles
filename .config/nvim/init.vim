@@ -7,44 +7,41 @@ set nocompatible
 filetype off
 set rtp+=~/.config/nvim/bundle/Vundle.vim
 
-" this line is very important for making vundle work correctly
-" if you don't include it, it will use ~/.vim
 " TODO consider switching to https://github.com/Shougo/dein.vim
+" package manager
 call vundle#rc('~/.config/nvim/bundle')
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'neomake/neomake'
-" also consider using ocean-dark
-" Plugin 'ExpandingMan/oceanic-next'
+" colors
 Plugin 'dracula/vim'
+
+" language support
 Plugin 'JuliaEditorSupport/julia-vim'
-Plugin 'scrooloose/nerdtree'
 Plugin 'lervag/vimtex'
+Plugin 'cespare/vim-toml'
+Plugin 'plasticboy/vim-markdown'
+" tables
+Plugin 'godlygeek/tabular'
+Plugin 'chrisbra/csv.vim'
+
+" airline
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ryanoasis/vim-devicons'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-" one still needs to run :UpdateRemotePlugins manually for this to work
+
+" nerdtree
+Plugin 'scrooloose/nerdtree'
+
+" linting and completion (also do UpdateRemotePlugins manually)
+Plugin 'w0rp/ale'
 Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" python completions for deoplete
 Plugin 'zchee/deoplete-jedi'
-" julia linting through neomake
-Plugin 'zyedidia/julialint.vim'
-Plugin 'cespare/vim-toml'
 
-" nicer csv formatting, not that you can use CSVTabularize to make into a nice
-" table
-Plugin 'chrisbra/csv.vim'
-
-" fuzzy text searches. installs fzf
+" search
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}
 Plugin 'junegunn/fzf.vim'
 
-" not yet sure if this will cooperate with deoplete
-" Plugin 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
-" Plugin 'roxma/nvim-completion-manager'
 call vundle#end()
 filetype plugin indent on
 
@@ -111,8 +108,6 @@ autocmd BufRead,BufNewFile *.jl hi Macro ctermfg=84 ctermbg=NONE cterm=NONE guif
 " some keyboard shortcuts, recall that leader is \ by default
 " nerdtree keyboard shortcut
 nmap <silent> <Leader>t :NERDTreeToggle<CR>
-" neomake keyboard shortcut
-nmap <silent> <Leader>l :Neomake<CR>
 
 " turn on deoplete
 let g:deoplete#enable_at_startup = 1
