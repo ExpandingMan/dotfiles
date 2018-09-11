@@ -52,6 +52,12 @@ An amazing little `pacman` utility for browsing things like dependency trees, fi
 ### `mps-youtube`
 Binary called `mpsyt`, this is a nice way of browsing YouTube from the command line and watching videos with VLC, mpv or another player.
 
+### `zathura`
+Vim-like PDF viewer.  On Arch, be sure to install `zathura-pdf-mupdf`.
+
+### `neomutt`
+See hideous website [here](https://neomutt.org/).  This is a vim-like mail client I'm considering setting up.
+
 
 ### Required
 The following are required for my default setup

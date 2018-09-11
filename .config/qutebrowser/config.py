@@ -36,6 +36,7 @@ c.url.searchengines["wa"] = "https://www.wolframalpha.com/input/?i={}"
 
 # commands
 config.bind(";v", "hint links spawn mpv {hint-url}")  # view video with mpv
+config.bind(";p", "hint links spawn zathura {hint-url}")  # view pdf with zathura
 
 # fonts
 c.fonts.tabs = "12pt Monospace Regular"
