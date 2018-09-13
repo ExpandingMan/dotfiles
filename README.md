@@ -114,6 +114,7 @@ launch a new Julia REPL.
 Here is a list of useful things that I often forget how to do:
 
 - `ldconfig -p`: Lists all libraries in library paths. For example do `ldconfig -p | grep libsdl` to find SDL libraries.
-- `objdump -p`: Lists all libraries that a binary wants to load among other things. Note you can also do `ldd` but this may result in code execution.
+- `ldd`: Lists all the libraries that the binary links to.
+- `objdump -p`: Lists all libraries that a binary links to among other things. Note you can also do `ldd` but this may result in code execution.
 - `sudo fdisk -l`: Lists mounted disk volumes.  Useful for finding, for example USB flash drives.
 - `dd bs=4M if=name_of_iso_file.iso of=/dev/sdX`: Write an ISO file to the drive at `/dev/sdX`.  (Unmount drive with `umount` first.)
