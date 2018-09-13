@@ -38,6 +38,11 @@ c.url.searchengines["wa"] = "https://www.wolframalpha.com/input/?i={}"
 config.bind(";v", "hint links spawn mpv {hint-url}")  # view video with mpv
 config.bind(";p", "hint links spawn zathura {hint-url}")  # view pdf with zathura
 
+# aliases for using proxy
+default_socks_proxy = "socks://127.0.0.1:8080"
+c.aliases["proxysocks-on"] = "set content.proxy %s" % default_socks_proxy
+c.aliases["proxysocks-off"] = "set content.proxy system"
+
 # fonts
 c.fonts.tabs = "12pt Monospace Regular"
 c.fonts.statusbar = "12pt Monospace Regular"
