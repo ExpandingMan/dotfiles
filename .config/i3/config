@@ -39,6 +39,9 @@ exec_always --no-startup-id "sleep 1"
 # exec_always --no-startup-id "feh --randomize --bg-fill $HOME/Pictures/backgrounds/*"
 exec_always --no-startup-id $HOME/.fehbg
 
+# start compton
+exec_always --no-startup-id compton --config $HOME/.config/compton.conf
+
 # launch polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
@@ -243,6 +246,6 @@ bindsym $mod+Shift+less move workspace to output left
 smart_borders on
 
 
-# monitor setup 
+# monitor setup
 workspace 1 output LVDS1
 workspace 2 output HDMI1

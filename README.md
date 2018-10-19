@@ -21,6 +21,10 @@ This is pretty crucial for `i3`.  `arandr` is a simple GUI that lets you arrange
 generating a 1-line script containing the necessary `xrandr` command.  To make this script execute whenever `i3` starts you can just put a line in your
 `config`.
 
+### `compton`
+This is a window compositor that runs in window managers such as `i3`. It needs to be launched during `i3` init (see `i3` conf).  There are settings in the
+`compton.conf` that disable the transparency of tabs (so you don't see through to all your tabs) but this will only work in `i3-gaps`.
+
 ### [`ranger`](https://wiki.archlinux.org/index.php/Ranger)
 This is a simple file browser a bit like from the DOS days.  The main usefulness of this is that you can use it to preview all sorts of things including images
 right in the terminal.  Note that you should use the config files found in this repo, and you may need `w3m` installed for previews to work.
