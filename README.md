@@ -65,7 +65,8 @@ See hideous website [here](https://neomutt.org/).  This is a vim-like mail clien
 
 ### Required
 The following are required for my default setup
-- `i3-gaps` (equivalently `i3` should work just fine)
+- `i3-gaps` (equivalently `i3` should work just fine) ([here](https://gist.github.com/boreycutts/6417980039760d9d9dac0dd2148d4783) is a brief guide for
+    installing on Debian)
 - `polybar`
 - `dmenu_recency` (alternatively `dmenu` is fine, but be sure to change `i3` config)
 - `feh`
