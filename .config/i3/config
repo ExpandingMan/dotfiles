@@ -33,7 +33,8 @@ set $mod Mod4
 font xft:Monospace Regular 8
 
 # set background video and background
-exec_always --no-startup-id $HOME/.screenlayout/default.sh
+#exec_always --no-startup-id $HOME/.screenlayout/default.sh
+exec_always --no-startup-id "autorandr --change"
 # maybe this will help fix feh?
 exec_always --no-startup-id "sleep 1"
 # exec_always --no-startup-id "feh --randomize --bg-fill $HOME/Pictures/backgrounds/*"

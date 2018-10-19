@@ -21,6 +21,9 @@ This is pretty crucial for `i3`.  `arandr` is a simple GUI that lets you arrange
 generating a 1-line script containing the necessary `xrandr` command.  To make this script execute whenever `i3` starts you can just put a line in your
 `config`.
 
+### [`autorandr`](https://github.com/phillipberndt/autorandr)
+This can detect your display configuration and apply saved settings.  It is also useful for manually saving profiles.
+
 ### `compton`
 This is a window compositor that runs in window managers such as `i3`. It needs to be launched during `i3` init (see `i3` conf).  There are settings in the
 `compton.conf` that disable the transparency of tabs (so you don't see through to all your tabs) but this will only work in `i3-gaps`.
@@ -70,6 +73,7 @@ The following are required for my default setup
 - `polybar`
 - `dmenu_recency` (alternatively `dmenu` is fine, but be sure to change `i3` config)
 - `feh`
+- `autorandr`
 - `ttf-font-awesome` (these are icon fonts used by the `polybar`)
 - `nvim` (my default editor I use for everything)
 
