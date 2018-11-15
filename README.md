@@ -50,6 +50,9 @@ just the current window, and `Shift+Print` for a little box that you can select 
 This is for controlling audio output, usually the OS will use this by default.  I need to make keybindings within `i3` at some point. In the meantime, you can
 increase or decrease volume with `amixer set Master x%±`.
 
+### `alsamixer`
+This is a TUI for controlling audio devices.  Best way to control volumes of individual devices such as headphones and mics.
+
 ### [`mpv`](https://wiki.archlinux.org/index.php/Mpv)
 A really nice minimalistic media player.
 
