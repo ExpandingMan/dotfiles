@@ -95,10 +95,6 @@ export PATH=$PATH:$JULIA_BINDIR
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$JULIA_BINDIR/../lib
 
-export JULIA_HOME=/opt/julia0p6/bin
-alias julia6="/opt/julia0p6/bin/julia"
-# need library path also for now
-
 # set all editors to nvim
 export JULIA_EDITOR=nvim
 export EDITOR=nvim
