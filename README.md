@@ -51,7 +51,8 @@ This is for controlling audio output, usually the OS will use this by default.  
 increase or decrease volume with `amixer set Master x%±`.
 
 ### `alsamixer`
-This is a TUI for controlling audio devices.  Best way to control volumes of individual devices such as headphones and mics.
+This is a TUI for controlling audio devices.  Best way to control volumes of individual devices such as headphones and mics.  See also `pavucontrol` for a full
+GUI, sometimes it's easier for things like USB headsets.
 
 ### [`mpv`](https://wiki.archlinux.org/index.php/Mpv)
 A really nice minimalistic media player.
