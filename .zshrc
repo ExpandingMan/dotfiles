@@ -59,13 +59,6 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 
 source $ZSH/oh-my-zsh.sh
 
-# GUROBI stuff
-export GUROBI_HOME="/opt/gurobi652/linux64"
-# export GUROBI_HOME="/home/savastio/gurobi652/linux64"
-export PATH="${PATH}:${GUROBI_HOME}/bin"
-export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
-export GRB_LICENSE_FILE="${GUROBI_HOME}/gurobi.lic"
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
