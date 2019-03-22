@@ -13,14 +13,13 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 # general
 c.editor.command = ["gnome-terminal", "--wait", "-x", "nvim", "-f", "{}"]
 
-# fingerprinting
 #c.content.headers.user_agent = ""  # empty is the default
-# generic user agent
-c.content.headers.user_agent = "Mozilla/5.0 (Windows NT 6.1; rv:52.0) Gecko/20100101 Firefox/52.0"
-c.content.headers.custom = {} # empty is the default
+# the below emulates FireFox
+c.content.headers.user_agent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99999.0.3578.98 Safari/537.36"
 # generic HTTP_ACCEPT header
+c.content.headers.custom = {} # empty is the default
 # c.content.headers.custom = {"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"}
-c.content.headers.custom = {"accept": "text/html, */*; q=0.01 gzip, deflate, br en-US,en;q=0.5"}
+# c.content.headers.custom = {"accept": "text/html, */*; q=0.01 gzip, deflate, br en-US,en;q=0.5"}
 c.content.canvas_reading = False
 
 # searchengines
