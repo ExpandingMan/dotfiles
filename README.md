@@ -9,6 +9,10 @@ For the most part everything described here should be more-or-less distro agnost
 major headache on Ubuntu is that on Ubuntu one has to compile `polybar`.  This is a big pain because `polybar` depends on `libxcb` and in the Ubuntu repos that
 library is split into about a billion different packages, so you'll be spending a good amount of time figuring out which ones you need.
 
+## Prompt
+I use [prezto](https://github.com/sorin-ionescu/prezto) which runs on `zsh`.  It has lots of useful features, is easy to configure and actually reasonably fast.
+Note that tough it must be loaded in `.zshrc` there is separate configuration in `.zpreztorc`.
+
 ## Applications
 Here is a list of some useful applications that I would like to remember exist
 
