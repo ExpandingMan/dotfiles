@@ -54,8 +54,8 @@ set autoindent
 set smarttab
 
 " text wrapping for tex and md
-autocmd bufreadpre *.tex setlocal textwidth=160
-autocmd bufreadpre *.md setlocal textwidth=160
+autocmd bufreadpre *.tex setlocal textwidth=90
+autocmd bufreadpre *.md setlocal textwidth=90
 
 " fix Julia highlighting
 autocmd BufRead,BufNewFile *.jl set filetype=julia
