@@ -68,6 +68,9 @@ bindsym $mod+Return exec gnome-terminal
 # start a Julia REPL
 bindsym $mod+F1 exec "gnome-terminal -e /opt/julia/bin/julia"
 
+# sample binding for ssh logon, requires .ssh/config entry
+#bindsym $mod+F2 exec "gnome-terminal -e 'ssh servername'"
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
