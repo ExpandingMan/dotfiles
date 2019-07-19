@@ -32,6 +32,7 @@ c.url.searchengines["a"] = "https://wiki.archlinux.org/?search={}"
 c.url.searchengines["arx"] = "https://arxiv.org/search/?query={}"
 c.url.searchengines["jl"] = "https://docs.julialang.org/en/stable/search/?q={}"
 c.url.searchengines["wa"] = "https://www.wolframalpha.com/input/?i={}"
+c.url.searchengines["sp"] = "https://www.startpage.com/search/?q={}"
 
 # commands
 config.bind(";v", "hint links spawn mpv {hint-url}")  # view video with mpv
