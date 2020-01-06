@@ -184,11 +184,11 @@
     "yy": {
       "type": "urls.yank"
     },
-    "p": {
+    "pp": {
       "type": "urls.paste",
       "newTab": false
     },
-    "P": {
+    "Pp": {
       "type": "urls.paste",
       "newTab": true
     },
