@@ -127,6 +127,17 @@ Julia binaries are expected to be in `/opt/julia/bin` (at some point I will have
 launch a new Julia REPL.
 
 
+## Web
+Slowly mankind frees itself from the oppressive Tyranny of Google.  A few programs are
+available which turns some of their own tactics (i.e. aggregation) against them:
+- [Invidious](https://invidio.us) ([repo](https://github.com/omarroth/invidious)) is an
+    alternative front-end to YouTube.
+- [Nitter](https://nitter.net) is an alternative front-end to Twitter (I despise twitter,
+    but sometimes interesting people post useful things there).
+- [Invidation](https://addons.mozilla.org/en-US/firefox/addon/invidition/) is a Firefox
+    plugin for re-directing YouTube and twitter links to invidious and nitter.
+
+
 ## How-To
 Here is a list of useful things that I often forget how to do:
 
