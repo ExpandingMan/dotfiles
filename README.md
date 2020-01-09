@@ -1,6 +1,9 @@
 # dotfiles
 The intention is to make it pretty easy to reproduce my linux installs with only what is in this repository.
 
+Note that a lot of helpful information on which programs to use can be found at
+[privacytools.io](https://www.privacytools.io).
+
 ## Distro
 I've very quickly come to prefer Manjaro for a number of reasons, in particular that it seems to have amazingly worry-free hardware setup even for nVidia.
 Historically I've used Ubuntu quite a lot, but lately am getting rather fed up with the update model among other things.
@@ -17,8 +20,7 @@ Note that tough it must be loaded in `.zshrc` there is separate configuration in
 Here is a list of some useful applications that I would like to remember exist
 
 ### [`qutebrowser`](https://wiki.archlinux.org/index.php/Qutebrowser)
-A vim-like browser.  Initially I was just using a vim plugin called tridactyl for firefox, but I was surprised how well qutebrowser works.  I have a
-configuration for it here.  The one major disadvantage that I can see is that the ad blocking needs improvement.
+A vim-like browser.  Configuration for it in this repo.  The major disadvantage is of course the lack of add-ons.
 
 ### `arandr`
 This is pretty crucial for `i3`.  `arandr` is a simple GUI that lets you arrange the layout of your display output and change resolutions.  `arandr` works by
@@ -136,6 +138,20 @@ available which turns some of their own tactics (i.e. aggregation) against them:
     but sometimes interesting people post useful things there).
 - [Invidation](https://addons.mozilla.org/en-US/firefox/addon/invidition/) is a Firefox
     plugin for re-directing YouTube and twitter links to invidious and nitter.
+
+### Firefox Add-Ons
+- [Privacy Badger](https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/):
+    Tracking blocker from EFF.
+- [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/): The best
+    ad blocker.
+- [Invidation](https://addons.mozilla.org/en-US/firefox/addon/invidition/): Plugin for
+    re-directing YouTube and twitter links to invidious and nitter (mentioned above).
+- [CanvasBlocker](https://addons.mozilla.org/en-US/firefox/addon/canvasblocker/): Plugin
+    for blocking some fingerprinting.
+- [User-Agent Switcher](https://addons.mozilla.org/en-US/firefox/addon/uaswitcher/):
+    Plugin for managing user agent strings.
+- [LessPass](https://addons.mozilla.org/en-US/firefox/addon/lesspass/): Stateless password
+    generation.
 
 
 ## How-To

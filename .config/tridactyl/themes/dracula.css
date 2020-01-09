@@ -1,0 +1,72 @@
+:root.TridactylThemeDracula {
+    --dracula-bg: #282A36;
+    --dracula-current-lone: #44475A;
+    --dracula-selection: #44475A;
+    --dracula-fg: #F8F8F2;
+    --dracula-comment: #6272A4;
+    --dracula-cyan: #8BE9FD;
+    --dracula-green: #40FA7B;
+    --dracula-orange: #FFB86C;
+    --dracula-pink: #FF79C6;
+    --dracula-purple: #BD93F9;
+    --dracula-red: #FF5555;
+    --dracula-yellow: #F1FA8C;
+
+    --tridactyl-font-family: monospace;
+    --tridactyl-font-size: 14pt;
+    --tridactyl-bg: var(--dracula-bg);
+    --tridactyl-fg: var(--dracula-comment);
+
+    --tridactyl-url-fg: var(--dracula-green);
+
+    --tridactyl-of-fg: var(--dracula-bg);
+    --tridactyl-of-bg: var(--dracula-cyan);
+
+    --tridactyl-highlight-box-bg: var(--dracula-cyan);
+    --tridactyl-highlight-box-fg: var(--dracula-bg);
+
+    --tridactyl-vs-fg: var(--dracula-fg);
+
+    /* Mode indicator */
+    --tridactyl-status-border: 1px var(--dracula-comment) solid;
+    --tridactyl-status-fg: var(--dracula-fg);
+
+    /* Search highlight */
+    --tridactyl-search-highlight-color: var(--dracula-green);
+
+    /* hint character tags */
+    --tridactyl-hintspan-font-family: var(--tridactyl-font-family);
+    --tridactyl-hintspan-bg: var(--dracula-bg);
+    --tridactyl-hintspan-fg: var(--dracula-orange);
+    --tridactyl-hintspan-border-color: var(--dracula-comment);
+    --tridactyl-hintspan-border-width: 0px;
+
+    --tridactyl-hint-active-fg: var(--dracula-orange);
+    --tridactyl-hint-active-bg: var(--dracula-bg);
+    --tridactyl-hint-active-outline: 1px solid var(--dracula-orange);
+
+    /* commandline */
+    --tridactyl-cmdl-bg: var(--dracula-bg);
+    --tridactyl-cmdl-fg: var(--dracula-fg);
+    --tridactyl-cmdl-height: 1.5;
+    --tridactyl-cmdl-font-family: monospace;
+    --tridactyl-cmdl-font-size: 10pt;
+
+    /* completions */
+    --tridactyl-cmplt-fg: var(--dracula-comment);
+    --tridactyl-cmplt-font-size: 10pt;
+
+    /* header */
+    --tridactyl-header-first-bg: var(--dracula-bg);
+    --tridactyl-header-second-bg: var(--dracula-bg);
+    --tridactyl-header-third-bg: var(--dracula-bg);
+
+    --tridactyl-container-color-blue: var(--dracula-cyan);
+    --tridactyl-container-color-turquoise: var(--dracula-green);
+    --tridactyl-container-color-green: var(--dracula-green);
+    --tridactyl-container-color-yellow: var(--dracula-yellow);
+    --tridactyl-container-color-orange: var(--dracula-orange);
+    --tridactyl-container-color-red: var(--dracula-red);
+    --tridactyl-container-color-pink: var(--dracula-pink);
+    --tridactyl-container-color-purple: var(--dracula-purple);
+}
