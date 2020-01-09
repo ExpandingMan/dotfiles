@@ -152,6 +152,9 @@ available which turns some of their own tactics (i.e. aggregation) against them:
     Plugin for managing user agent strings.
 - [LessPass](https://addons.mozilla.org/en-US/firefox/addon/lesspass/): Stateless password
     generation.
+- [Tridactyl](https://addons.mozilla.org/en-US/firefox/addon/tridactyl-vim/): Vim-like
+    functionality in firefox.  Almost on-par with qutebrowser, but is a bit fragile.
+    Configs are found in this repo.
 
 
 ## How-To
