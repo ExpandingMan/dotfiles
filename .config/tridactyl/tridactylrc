@@ -30,9 +30,6 @@ bind k scrollline -5
 bind K tabprev
 bind J tabnext
 
-" open in new tab set to qutebrowser default
-bind O fillcmdline tabopen
-
 " Sometimes the status bar in the bottom left corner overlaps the Tridactyl
 " command line, so set an option to move the status bar to the right.
 guiset_quiet hoverlink right
