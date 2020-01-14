@@ -137,7 +137,9 @@ available which turns some of their own tactics (i.e. aggregation) against them:
 - [Nitter](https://nitter.net) is an alternative front-end to Twitter (I despise twitter,
     but sometimes interesting people post useful things there).
 - [Invidation](https://addons.mozilla.org/en-US/firefox/addon/invidition/) is a Firefox
-    plugin for re-directing YouTube and twitter links to invidious and nitter.
+    plugin for re-directing YouTube and twitter links to invidious and nitter.  (Note that
+    by default this also passes lots of parameters in the URL that will override your
+    invidious settings, but these can be disabled in settings.)
 
 ### Firefox Add-Ons
 - [Privacy Badger](https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/):
