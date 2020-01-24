@@ -1,0 +1,100 @@
+#
+# All information at your chilly fingertips.
+#
+# Authors:
+#   Tom Frost <tom@frosteddesign.com>
+#
+# Screenshots:
+#   http://i.tomfro.st/U1Kov.png
+#
+
+# Dependencies
+pmodload 'helper'
+
+function prompt_frost_precmd {
+  setopt LOCAL_OPTIONS
+  unsetopt XTRACE KSH_ARRAYS
+
+  if (( $+functions[git-info] )); then
+    git-info
+  fi
+
+  if (( $+functions[python-info] )); then
+    python-info
+  fi
+}
+
+function prompt_frost_setup {
+  setopt LOCAL_OPTIONS
+  unsetopt XTRACE KSH_ARRAYS
+  prompt_opts=(cr percent subst)
+
+  # Load required functions.
+  autoload -Uz add-zsh-hook
+  autoload -Uz vcs_info
+
+  # Add hook for calling vcs_info before each command.
+  add-zsh-hook precmd prompt_frost_precmd
+
+  _prompt_frost_nocolor="%{$terminfo[sgr0]%}"
+  _prompt_frost_colors=(
+    "${_prompt_frost_nocolor}%F{blue}"
+    "${_prompt_frost_nocolor}%F{cyan}%{$terminfo[bold]%}"
+    "${_prompt_frost_nocolor}%F{green}"
+    "${_prompt_frost_nocolor}%F{green}%{$terminfo[bold]%}"
+    "${_prompt_frost_nocolor}%F{red}"
+    "${_prompt_frost_nocolor}%F{red}%{$terminfo[bold]%}"
+    "${_prompt_frost_nocolor}%F{yellow}"
+    "${_prompt_frost_nocolor}%F{yellow}%{$terminfo[bold]%}"
+  )
+
+  # Set editor-info params
+  zstyle ':prezto:module:editor:info:completing' format '${_prompt_frost_colors[5]}...${_prompt_frost_nocolor}'
+  zstyle ':prezto:module:editor:info:keymap:primary' format '➤'
+  zstyle ':prezto:module:editor:info:keymap:primary:overwrite' format '♺'
+  zstyle ':prezto:module:editor:info:keymap:alternate' format '⍟'
+
+  # Set get-info parameters
+  zstyle ':prezto:module:git:info' verbose 'yes'
+  zstyle ':prezto:module:git:info:action' format "${_prompt_frost_colors[1]}∙${_prompt_frost_colors[7]}%s${_prompt_frost_nocolor}"
+  zstyle ':prezto:module:git:info:added' format "${_prompt_frost_colors[4]}✚${_prompt_frost_nocolor}"
+  zstyle ':prezto:module:git:info:ahead' format "${_prompt_frost_colors[8]}⚡${_prompt_frost_nocolor}"
+  zstyle ':prezto:module:git:info:behind' format "${_prompt_frost_colors[8]}↯${_prompt_frost_nocolor}"
+  zstyle ':prezto:module:git:info:branch' format "${_prompt_frost_colors[1]}∙${_prompt_frost_colors[2]}%b${_prompt_frost_nocolor}"
+  zstyle ':prezto:module:git:info:clean' format "${_prompt_frost_colors[3]}✔${_prompt_frost_nocolor}"
+  zstyle ':prezto:module:git:info:commit' format "${_prompt_frost_colors[2]}%.7c${_prompt_frost_nocolor}"
+  zstyle ':prezto:module:git:info:deleted' format "${_prompt_frost_colors[6]}✖${_prompt_frost_nocolor}"
+  zstyle ':prezto:module:git:info:modified' format "${_prompt_frost_colors[7]}✱${_prompt_frost_nocolor}"
+  zstyle ':prezto:module:git:info:renamed' format "${_prompt_frost_colors[6]}➜${_prompt_frost_nocolor}"
+  zstyle ':prezto:module:git:info:stashed' format "${_prompt_frost_colors[7]}✭${_prompt_frost_nocolor}"
+  zstyle ':prezto:module:git:info:unmerged' format "${_prompt_frost_colors[7]}═${_prompt_frost_nocolor}"
+  zstyle ':prezto:module:git:info:untracked' format "${_prompt_frost_colors[6]}▪${_prompt_frost_nocolor}"
+  zstyle ':prezto:module:git:info:keys' format \
+    'prompt' "${_prompt_frost_colors[1]}<%c%b%s${_prompt_frost_colors[1]}∙%C%A%B%S%a%d%m%r%U%u${_prompt_frost_colors[1]}>-" \
+    'rprompt' ''
+
+  # Set python-info parameters
+  zstyle ':prezto:module:python:info:virtualenv' format '<${_prompt_frost_colors[2]}%v${_prompt_frost_nocolor}>-'
+
+  # Get the time
+  local time="%T"
+
+  # Remote hosts change colors
+  if [[ -n "$SSH_CLIENT"  ||  -n "$SSH2_CLIENT" ]]; then
+    local host="${_prompt_frost_colors[8]}%m" #SSH
+  else
+    local host="${_prompt_frost_colors[4]}%m" # no SSH
+  fi
+
+  local user="%(!.${_prompt_frost_colors[6]}.${_prompt_frost_colors[4]})%n"
+  local promptcolor='%(!.${_prompt_frost_colors[6]}.${_prompt_frost_nocolor})'
+
+  # Define prompts.
+  PROMPT="
+${_prompt_frost_colors[1]}╭─⟨${user}${_prompt_frost_colors[1]}@${host}${_prompt_frost_colors[1]}⟩—⟨${_prompt_frost_colors[2]}%~${_prompt_frost_colors[1]}⟩—"'${git_info[prompt]}'""'$python_info[virtualenv]'"${_prompt_frost_colors[1]}⟨${_prompt_frost_colors[2]}$time${_prompt_frost_colors[1]}⟩—⌬
+╰─${promptcolor}"'${editor_info[keymap]}'"${_prompt_frost_nocolor} "
+  RPROMPT='${git_info[rprompt]}%(?..${_prompt_frost_colors[5]}%? ↵${_prompt_frost_nocolor})'
+  SPROMPT='zsh: correct ${_prompt_frost_colors[6]}%R${_prompt_frost_nocolor} to ${_prompt_frost_colors[4]}%r${_prompt_frost_nocolor} [nyae]? '
+}
+
+prompt_frost_setup "$@"
