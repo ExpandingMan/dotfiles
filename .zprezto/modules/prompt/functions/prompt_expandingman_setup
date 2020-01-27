@@ -1,30 +1,18 @@
-#
-# All information at your chilly fingertips.
-#
-# Authors:
-#   Tom Frost <tom@frosteddesign.com>
-#
-# Screenshots:
-#   http://i.tomfro.st/U1Kov.png
-#
+# TODO WORK IN PROGRESS!!!!
 
 # Dependencies
 pmodload 'helper'
 
-function prompt_frost_precmd {
+function prompt_drac_precmd {
   setopt LOCAL_OPTIONS
   unsetopt XTRACE KSH_ARRAYS
 
   if (( $+functions[git-info] )); then
     git-info
   fi
-
-  if (( $+functions[python-info] )); then
-    python-info
-  fi
 }
 
-function prompt_frost_setup {
+function prompt_drac_setup {
   setopt LOCAL_OPTIONS
   unsetopt XTRACE KSH_ARRAYS
   prompt_opts=(cr percent subst)
@@ -34,67 +22,94 @@ function prompt_frost_setup {
   autoload -Uz vcs_info
 
   # Add hook for calling vcs_info before each command.
-  add-zsh-hook precmd prompt_frost_precmd
+  add-zsh-hook precmd prompt_drac_precmd
 
-  _prompt_frost_nocolor="%{$terminfo[sgr0]%}"
-  _prompt_frost_colors=(
-    "${_prompt_frost_nocolor}%F{blue}"
-    "${_prompt_frost_nocolor}%F{cyan}%{$terminfo[bold]%}"
-    "${_prompt_frost_nocolor}%F{green}"
-    "${_prompt_frost_nocolor}%F{green}%{$terminfo[bold]%}"
-    "${_prompt_frost_nocolor}%F{red}"
-    "${_prompt_frost_nocolor}%F{red}%{$terminfo[bold]%}"
-    "${_prompt_frost_nocolor}%F{yellow}"
-    "${_prompt_frost_nocolor}%F{yellow}%{$terminfo[bold]%}"
+  # legacy color format for git stuff
+  _prompt_drac_colors=(
+    "${_prompt_drac_nocolor}%F{purple}"
+    "${_prompt_drac_nocolor}%F{cyan}%{$terminfo[bold]%}"
+    "${_prompt_drac_nocolor}%F{green}"
+    "${_prompt_drac_nocolor}%F{green}%{$terminfo[bold]%}"
+    "${_prompt_drac_nocolor}%F{red}"
+    "${_prompt_drac_nocolor}%F{red}%{$terminfo[bold]%}"
+    "${_prompt_drac_nocolor}%F{yellow}"
+    "${_prompt_drac_nocolor}%F{yellow}%{$terminfo[bold]%}"
+    "${_prompt_drac_nocolor}%F{black}"
+    "${_prompt_drac_nocolor}%F{magenta}"
   )
 
-  # Set editor-info params
-  zstyle ':prezto:module:editor:info:completing' format '${_prompt_frost_colors[5]}...${_prompt_frost_nocolor}'
-  zstyle ':prezto:module:editor:info:keymap:primary' format '➤'
+  __nocolor="%{$terminfo[sgr0]%}"
+
+  # %f to turn color off
+  __drac_background="%F{#282a36}"
+  __drac_selection="%F{#44475a}"
+  __drac_selection="%F{#44475a}"
+  __drac_comment="%F{#6272a4}"
+  __drac_cyan="%F{#8be9fd}"
+  __drac_green="%F{#50fa7b}"
+  __drac_orange="%F{#ffb86c}"
+  __drac_pink="%F{#ff79c6}"
+  __drac_purple="%F{#bd93f9}"
+  __drac_red="%F{#ff5555}"
+  __drac_yellow="%F{#f1fa8c}"
+
+  # %k to turn color off
+  __drac_back_background="%K{#282a36}"
+  __drac_back_selection="%K{#44475a}"
+  __drac_back_selection="%K{#44475a}"
+  __drac_back_comment="%K{#6272a4}"
+  __drac_back_cyan="%K{#8be9fd}"
+  __drac_back_green="%K{#50fa7b}"
+  __drac_back_orange="%K{#ffb86c}"
+  __drac_back_pink="%K{#ff79c6}"
+  __drac_back_purple="%K{#bd93f9}"
+  __drac_back_red="%K{#ff5555}"
+  __drac_back_yellow="%K{#f1fa8c}"
+
+  # Set editor-info params, TODO these aren't working right now, see zprezto #1789
+  zstyle ':prezto:module:editor:info:completing' format '$__drac_red...$__nocolor'
+  zstyle ':prezto:module:editor:info:keymap:primary' format "${__drac_comment}◗$__nocolor"
   zstyle ':prezto:module:editor:info:keymap:primary:overwrite' format '♺'
   zstyle ':prezto:module:editor:info:keymap:alternate' format '⍟'
 
   # Set get-info parameters
   zstyle ':prezto:module:git:info' verbose 'yes'
-  zstyle ':prezto:module:git:info:action' format "${_prompt_frost_colors[1]}∙${_prompt_frost_colors[7]}%s${_prompt_frost_nocolor}"
-  zstyle ':prezto:module:git:info:added' format "${_prompt_frost_colors[4]}✚${_prompt_frost_nocolor}"
-  zstyle ':prezto:module:git:info:ahead' format "${_prompt_frost_colors[8]}⚡${_prompt_frost_nocolor}"
-  zstyle ':prezto:module:git:info:behind' format "${_prompt_frost_colors[8]}↯${_prompt_frost_nocolor}"
-  zstyle ':prezto:module:git:info:branch' format "${_prompt_frost_colors[1]}∙${_prompt_frost_colors[2]}%b${_prompt_frost_nocolor}"
-  zstyle ':prezto:module:git:info:clean' format "${_prompt_frost_colors[3]}✔${_prompt_frost_nocolor}"
-  zstyle ':prezto:module:git:info:commit' format "${_prompt_frost_colors[2]}%.7c${_prompt_frost_nocolor}"
-  zstyle ':prezto:module:git:info:deleted' format "${_prompt_frost_colors[6]}✖${_prompt_frost_nocolor}"
-  zstyle ':prezto:module:git:info:modified' format "${_prompt_frost_colors[7]}✱${_prompt_frost_nocolor}"
-  zstyle ':prezto:module:git:info:renamed' format "${_prompt_frost_colors[6]}➜${_prompt_frost_nocolor}"
-  zstyle ':prezto:module:git:info:stashed' format "${_prompt_frost_colors[7]}✭${_prompt_frost_nocolor}"
-  zstyle ':prezto:module:git:info:unmerged' format "${_prompt_frost_colors[7]}═${_prompt_frost_nocolor}"
-  zstyle ':prezto:module:git:info:untracked' format "${_prompt_frost_colors[6]}▪${_prompt_frost_nocolor}"
+  zstyle ':prezto:module:git:info:action' format "${__drac_purple}∙%s$__nocolor"
+  zstyle ':prezto:module:git:info:added' format "${__drac_yellow}✚$__nocolor"
+  zstyle ':prezto:module:git:info:ahead' format "${__drac_red}⚡$__nocolor"
+  zstyle ':prezto:module:git:info:behind' format "${__drac_red}↯$__nocolor"
+  zstyle ':prezto:module:git:info:branch' format "${__drac_pink}∙%b$__nocolor"
+  zstyle ':prezto:module:git:info:clean' format "${__drac_green}✔$__nocolor"
+  zstyle ':prezto:module:git:info:commit' format "${__drac_cyan}%.7c$__nocolor"
+  zstyle ':prezto:module:git:info:deleted' format "${__drac_red}✖$__nocolor"
+  zstyle ':prezto:module:git:info:modified' format "${__drac_yellow}✱$__nocolor"
+  zstyle ':prezto:module:git:info:renamed' format "${__drac_orange}➜$__nocolor"
+  zstyle ':prezto:module:git:info:stashed' format "${__drac_orange}✭$__nocolor"
+  zstyle ':prezto:module:git:info:unmerged' format "${__drac_red}═$__nocolor"
+  zstyle ':prezto:module:git:info:untracked' format "${__drac_orange}▪$__nocolor"
   zstyle ':prezto:module:git:info:keys' format \
-    'prompt' "${_prompt_frost_colors[1]}<%c%b%s${_prompt_frost_colors[1]}∙%C%A%B%S%a%d%m%r%U%u${_prompt_frost_colors[1]}>-" \
+    'prompt' "%c%b%s ∙ %C%A%B%S%a%d%m%r%U%u" \
     'rprompt' ''
-
-  # Set python-info parameters
-  zstyle ':prezto:module:python:info:virtualenv' format '<${_prompt_frost_colors[2]}%v${_prompt_frost_nocolor}>-'
 
   # Get the time
   local time="%T"
 
   # Remote hosts change colors
   if [[ -n "$SSH_CLIENT"  ||  -n "$SSH2_CLIENT" ]]; then
-    local host="${_prompt_frost_colors[8]}%m" #SSH
+    local host="${__drac_orange}%m$__nocolor" #SSH
   else
-    local host="${_prompt_frost_colors[4]}%m" # no SSH
+    local host="${__drac_yellow}%m$__nocolor" # no SSH
   fi
 
-  local user="%(!.${_prompt_frost_colors[6]}.${_prompt_frost_colors[4]})%n"
-  local promptcolor='%(!.${_prompt_frost_colors[6]}.${_prompt_frost_nocolor})'
+  local user="%(!.${__drac_red}.${__drac_yellow})%n"
 
   # Define prompts.
-  PROMPT="
-${_prompt_frost_colors[1]}╭─⟨${user}${_prompt_frost_colors[1]}@${host}${_prompt_frost_colors[1]}⟩—⟨${_prompt_frost_colors[2]}%~${_prompt_frost_colors[1]}⟩—"'${git_info[prompt]}'""'$python_info[virtualenv]'"${_prompt_frost_colors[1]}⟨${_prompt_frost_colors[2]}$time${_prompt_frost_colors[1]}⟩—⌬
-╰─${promptcolor}"'${editor_info[keymap]}'"${_prompt_frost_nocolor} "
-  RPROMPT='${git_info[rprompt]}%(?..${_prompt_frost_colors[5]}%? ↵${_prompt_frost_nocolor})'
-  SPROMPT='zsh: correct ${_prompt_frost_colors[6]}%R${_prompt_frost_nocolor} to ${_prompt_frost_colors[4]}%r${_prompt_frost_nocolor} [nyae]? '
+  #PROMPT="${_prompt_drac_colors[1]}╭─⟨${user}${_prompt_drac_colors[1]}@${host}${_prompt_drac_colors[1]}⟩—⟨${_prompt_drac_colors[2]}%~${_prompt_drac_colors[1]}⟩—"'${git_info[prompt]}'"${_prompt_drac_colors[1]}⟨${_prompt_drac_colors[2]}$time${_prompt_drac_colors[1]}⟩—⌬
+#╰─${__nocolor}"'${editor_info[keymap]}'"${_prompt_drac_nocolor} "
+  #RPROMPT='${git_info[rprompt]}%(?..${_prompt_drac_colors[5]}%? ↵${_prompt_drac_nocolor})'
+  #SPROMPT='zsh: correct ${_prompt_drac_colors[6]}%R${_prompt_drac_nocolor} to ${_prompt_drac_colors[4]}%r${_prompt_drac_nocolor} [nyae]? '
+  PROMPT="$__drac_back_comment %? %k$user$__drac_comment@$host ${__drac_comment} ⃒%k $__drac_purple%/ $__drac_comment◗$__nocolor "
+  RPROMPT='${git_info[prompt]}$__nocolor'
 }
 
-prompt_frost_setup "$@"
+prompt_drac_setup "$@"
