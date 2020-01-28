@@ -93,8 +93,8 @@ function prompt_drac_setup {
   local retval="%(?.${__drac_cyan}%?.${__drac_red}%?)$__nocolor"
 
   # Define prompts.
-  #SPROMPT='zsh: correct ${_prompt_drac_colors[6]}%R${_prompt_drac_nocolor} to ${_prompt_drac_colors[4]}%r${_prompt_drac_nocolor} [nyae]? '
-  PROMPT="$__drac_purple◖$__nocolor $retval %k$user$__drac_purple@$host ${__drac_purple}▮ $__drac_cyan%/ "'${editor_info[keymap]}'
+  SPROMPT='zsh: correct ${__drac_pink}%R${__nocolor} to ${__drac_green}%r${__nocolor} [nyae]? '
+  PROMPT="$__drac_purple◖$__nocolor$retval$__drac_purple▮$user$__drac_purple@$host${__drac_purple}▮$__drac_cyan%/"'${editor_info[keymap]}'
   RPROMPT='${git_info[rprompt]}$__nocolor'
 }
 
