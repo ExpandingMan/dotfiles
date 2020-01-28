@@ -117,7 +117,7 @@ zstyle ':prezto:module:editor' key-bindings 'vi'
 # zstyle ':prezto:module:prompt' theme 'sorin'
 # the garrett theme needs to be downloaded
 # zstyle ':prezto:module:prompt' theme 'garrett'
-zstyle ':prezto:module:prompt' theme 'expandingman'
+zstyle ':prezto:module:prompt' theme 'lcars'
 
 # Set the working directory prompt display length.
 # By default, it is set to 'short'. Set it to 'long' (without '~' expansion)

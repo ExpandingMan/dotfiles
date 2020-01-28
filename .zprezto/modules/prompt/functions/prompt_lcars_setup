@@ -1,4 +1,4 @@
-# TODO WORK IN PROGRESS!!!!
+# LCARS prompt with dracula colors
 
 # Dependencies
 pmodload 'helper'
@@ -88,8 +88,7 @@ function prompt_drac_setup {
   zstyle ':prezto:module:git:info:unmerged' format "${__drac_red}═$__nocolor"
   zstyle ':prezto:module:git:info:untracked' format "${__drac_orange}▪$__nocolor"
   zstyle ':prezto:module:git:info:keys' format \
-    'prompt' "%c%b%s ∙ %C%A%B%S%a%d%m%r%U%u" \
-    'rprompt' ''
+    'rprompt' "${__drac_purple}◖▯%c%b%s$__drac_pink∙$__nocolor%C%A%B%S%a%d%m%r%U%u"
 
   # Get the time
   local time="%T"
@@ -103,13 +102,12 @@ function prompt_drac_setup {
 
   local user="%(!.${__drac_red}.${__drac_yellow})%n"
 
+  local retval="%(?.${__drac_cyan}%?.${__drac_red}%?)$__nocolor"
+
   # Define prompts.
-  #PROMPT="${_prompt_drac_colors[1]}╭─⟨${user}${_prompt_drac_colors[1]}@${host}${_prompt_drac_colors[1]}⟩—⟨${_prompt_drac_colors[2]}%~${_prompt_drac_colors[1]}⟩—"'${git_info[prompt]}'"${_prompt_drac_colors[1]}⟨${_prompt_drac_colors[2]}$time${_prompt_drac_colors[1]}⟩—⌬
-#╰─${__nocolor}"'${editor_info[keymap]}'"${_prompt_drac_nocolor} "
-  #RPROMPT='${git_info[rprompt]}%(?..${_prompt_drac_colors[5]}%? ↵${_prompt_drac_nocolor})'
   #SPROMPT='zsh: correct ${_prompt_drac_colors[6]}%R${_prompt_drac_nocolor} to ${_prompt_drac_colors[4]}%r${_prompt_drac_nocolor} [nyae]? '
-  PROMPT="$__drac_back_comment %? %k$user$__drac_comment@$host ${__drac_comment} ⃒%k $__drac_purple%/ $__drac_comment◗$__nocolor "
-  RPROMPT='${git_info[prompt]}$__nocolor'
+  PROMPT="$__drac_comment◖$__nocolor $retval %k$user$__drac_comment@$host ${__drac_comment}▮%k $__drac_purple%/ $__drac_comment▮◗$__nocolor "
+  RPROMPT='${git_info[rprompt]}$__nocolor'
 }
 
 prompt_drac_setup "$@"
