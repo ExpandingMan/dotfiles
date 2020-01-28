@@ -24,38 +24,41 @@ function prompt_drac_setup {
   # Add hook for calling vcs_info before each command.
   add-zsh-hook precmd prompt_drac_precmd
 
+  zstyle ':prezto:module:prompt' managed 'yes'
+
   # %f to turn color off
-  __drac_background="%F{#282a36}"
-  __drac_selection="%F{#44475a}"
-  __drac_foreground="%F{#f8f8f2}"
-  __drac_comment="%F{#6272a4}"
-  __drac_cyan="%F{#8be9fd}"
-  __drac_green="%F{#50fa7b}"
-  __drac_orange="%F{#ffb86c}"
-  __drac_pink="%F{#ff79c6}"
-  __drac_purple="%F{#bd93f9}"
-  __drac_red="%F{#ff5555}"
-  __drac_yellow="%F{#f1fa8c}"
+  __drac_background="%F{#282A36}"
+  __drac_selection="%F{#44475A}"
+  __drac_foreground="%F{white}"
+  __drac_comment="%F{#6272A4}"
+  __drac_cyan="%F{cyan}"
+  __drac_green="%F{green}"
+  __drac_orange="%F{#ffB86C}"
+  __drac_pink="%F{magenta}"
+  # for some reason this picks the purple
+  __drac_purple="%F{blue}"
+  __drac_red="%F{red}"
+  __drac_yellow="%F{yellow}"
 
   __nocolor="$__drac_foreground"
 
   # %k to turn color off
-  __drac_back_background="%K{#282a36}"
-  __drac_back_selection="%K{#44475a}"
-  __drac_back_comment="%K{#6272a4}"
-  __drac_back_cyan="%K{#8be9fd}"
-  __drac_back_green="%K{#50fa7b}"
-  __drac_back_orange="%K{#ffb86c}"
-  __drac_back_pink="%K{#ff79c6}"
-  __drac_back_purple="%K{#bd93f9}"
-  __drac_back_red="%K{#ff5555}"
-  __drac_back_yellow="%K{#f1fa8c}"
+  __drac_back_background="%K{#282A36}"
+  __drac_back_selection="%K{#44475A}"
+  __drac_back_comment="%K{#6272A4}"
+  __drac_back_cyan="%K{cyan}"
+  __drac_back_green="%K{green}"
+  __drac_back_orange="%K{#ffB86C}"
+  __drac_back_pink="%K{magenta}"
+  __drac_back_purple="%K{blue}"
+  __drac_back_red="%K{red}"
+  __drac_back_yellow="%K{yellow}"
 
   # Set editor-info params, TODO these aren't working right now, see zprezto #1789
-  zstyle ':prezto:module:editor:info:completing' format '$__drac_red...$__nocolor'
-  zstyle ':prezto:module:editor:info:keymap:primary' format "${__drac_comment}◗$__nocolor"
-  zstyle ':prezto:module:editor:info:keymap:primary:overwrite' format '♺'
-  zstyle ':prezto:module:editor:info:keymap:alternate' format '⍟'
+  zstyle ':prezto:module:editor:info:completing' format "$__drac_red◖⋯$__nocolor "
+  zstyle ':prezto:module:editor:info:keymap:primary' format "${__drac_green}▮${__drac_purple}◗$__nocolor "
+  zstyle ':prezto:module:editor:info:keymap:primary:overwrite' format "${__drac_red}▮${__drac_purple}◗$__nocolor "
+  zstyle ':prezto:module:editor:info:keymap:alternate' format "${__drac_orange}▯${__drac_purple}◗$__nocolor "
 
   # Set get-info parameters
   zstyle ':prezto:module:git:info' verbose 'yes'
@@ -78,14 +81,12 @@ function prompt_drac_setup {
   # Get the time
   local time="%T"
 
-  # TODO experimenting because of weird problems on remote
   # Remote hosts change colors
-  #if [[ -n "$SSH_CLIENT"  ||  -n "$SSH2_CLIENT" ]]; then
-  #  local host="${__drac_orange}%m$__nocolor" #SSH
-  #else
-  #  local host="${__drac_yellow}%m$__nocolor" # no SSH
-  #fi
-  local host="${__drac_yellow}%m$__nocolor"
+  if [[ -n "$SSH_CLIENT"  ||  -n "$SSH2_CLIENT" ]]; then
+    local host="${__drac_pink}%m$__nocolor" #SSH
+  else
+    local host="${__drac_yellow}%m$__nocolor" # no SSH
+  fi
 
   local user="%(!.${__drac_red}.${__drac_yellow})%n"
 
@@ -93,7 +94,7 @@ function prompt_drac_setup {
 
   # Define prompts.
   #SPROMPT='zsh: correct ${_prompt_drac_colors[6]}%R${_prompt_drac_nocolor} to ${_prompt_drac_colors[4]}%r${_prompt_drac_nocolor} [nyae]? '
-  PROMPT="$__drac_comment◖$__nocolor $retval %k$user$__drac_comment@$host ${__drac_comment}▮%k $__drac_purple%/ $__drac_comment▮◗$__nocolor "
+  PROMPT="$__drac_purple◖$__nocolor $retval %k$user$__drac_purple@$host ${__drac_purple}▮ $__drac_cyan%/ "'${editor_info[keymap]}'
   RPROMPT='${git_info[rprompt]}$__nocolor'
 }
 
