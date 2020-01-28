@@ -1,4 +1,7 @@
 # LCARS prompt with dracula colors
+#
+# to use this do:
+# `ln -s ~/dotfiles/.zprezto/modules/prompt/functions/prompt_lcars_setup ~/.zprezto/modules/prompt/functions/`
 
 # Dependencies
 pmodload 'helper'
@@ -26,6 +29,8 @@ function prompt_drac_setup {
 
   zstyle ':prezto:module:prompt' managed 'yes'
 
+  # NOTE: these use defaults when possible to improve compatibility
+  # set colors in terminal config
   # %f to turn color off
   __drac_background="%F{#282A36}"
   __drac_selection="%F{#44475A}"
@@ -54,7 +59,7 @@ function prompt_drac_setup {
   __drac_back_red="%K{red}"
   __drac_back_yellow="%K{yellow}"
 
-  # Set editor-info params, TODO these aren't working right now, see zprezto #1789
+  # Set editor-info params
   zstyle ':prezto:module:editor:info:completing' format "$__drac_red◖⋯$__nocolor "
   zstyle ':prezto:module:editor:info:keymap:primary' format "${__drac_green}▮${__drac_purple}◗$__nocolor "
   zstyle ':prezto:module:editor:info:keymap:primary:overwrite' format "${__drac_red}▮${__drac_purple}◗$__nocolor "
