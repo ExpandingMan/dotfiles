@@ -99,7 +99,7 @@ function prompt_drac_setup {
 
   # Define prompts.
   SPROMPT='zsh: correct ${__drac_pink}%R${__nocolor} to ${__drac_green}%r${__nocolor} [nyae]? '
-  PROMPT="$__drac_purple◖$__nocolor$retval$__drac_purple▮$user$__drac_purple@$host${__drac_purple}▮$__drac_cyan%/"'${editor_info[keymap]}'
+  PROMPT="$__drac_purple◖$__nocolor$retval$__drac_purple▮$user$__drac_purple@$host${__drac_purple}▮$__drac_cyan%~"'${editor_info[keymap]}'
   RPROMPT='${git_info[rprompt]}$__nocolor'
 }
 
