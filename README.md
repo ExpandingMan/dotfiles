@@ -19,8 +19,14 @@ Note that tough it must be loaded in `.zshrc` there is separate configuration in
 ## Applications
 Here is a list of some useful applications that I would like to remember exist
 
+### [`alacritty`](https://github.com/alacritty/alacritty)
+The ultimate terminal emulator.  Highly configurable, GPU enabled and written in Rust.
+See the `.config/alacritty/alacritty.yml` config.
+
 ### [`qutebrowser`](https://wiki.archlinux.org/index.php/Qutebrowser)
-A vim-like browser.  Configuration for it in this repo.  The major disadvantage is of course the lack of add-ons.
+A vim-like browser.  Configuration for it in this repo.  The major disadvantage is of
+course the lack of add-ons.  Note that I have switched entirely from `qutebrowser` to
+Firefox+tridactyl because I could no longer survive without the Firefox add-on ecosystem.
 
 ### `arandr`
 This is pretty crucial for `i3`.  `arandr` is a simple GUI that lets you arrange the layout of your display output and change resolutions.  `arandr` works by
@@ -97,8 +103,9 @@ Currently the only non-standard directories that will be expected by something a
 Currently I'm using the [dracula](https://github.com/dracula/dracula-theme) everywhere mostly because it's *unbelievably well-supported* and, unlike many color
 schemes, actually has good enough contrast for me to be happy with it in vim.  I'd basically describe it as "neon that doesn't look too 80's".  The dracula
 colors are currently hard-coded into my `init.vim` (via the `dracula.vim` package), `i3/config` and `polybar/config`, which is certainly not ideal.  The only
-place a user would need to change the colors manually is on the terminal itself.  Since I use `gnome-terminal`, one can use
-[dracula/gnome-terminal](https://github.com/dracula/gnome-terminal).
+place a user would need to change the colors manually is on the terminal itself.  I use
+the `alacritty` terminal, so terminal colors are defined in
+`~/.config/alacritty/alacritty.yml`.
 
 See this [useful color configurator](https://thomashunter.name/i3-configurator/) for `i3`.
 
@@ -146,7 +153,7 @@ available which turns some of their own tactics (i.e. aggregation) against them:
     Tracking blocker from EFF.
 - [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/): The best
     ad blocker.
-- [Invidation](https://addons.mozilla.org/en-US/firefox/addon/invidition/): Plugin for
+- [Invidition](https://addons.mozilla.org/en-US/firefox/addon/invidition/): Plugin for
     re-directing YouTube and twitter links to invidious and nitter (mentioned above).
 - [CanvasBlocker](https://addons.mozilla.org/en-US/firefox/addon/canvasblocker/): Plugin
     for blocking some fingerprinting.
