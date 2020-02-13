@@ -34,6 +34,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$JULIA_BINDIR/../lib
 export JULIA_EDITOR=nvim
 export EDITOR=nvim
 export VISUAL=nvim
+export BROWSER=firefox
 
 # tmux stuff: not used with i3.  WARNING can break terminal!
 # alias tmux to set different term variable
