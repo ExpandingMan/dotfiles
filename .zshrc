@@ -42,3 +42,5 @@ export BROWSER=firefox
 # start tmux on terminal start
 # [[ $TERM != "screen" ]] && exec tmux
 
+# some host machines may not recognize TERM=alacritty
+alias ssh="TERM=xterm-256color ssh"
