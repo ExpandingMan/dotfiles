@@ -169,6 +169,9 @@ available which turns some of their own tactics (i.e. aggregation) against them:
 ## How-To
 Here is a list of useful things that I often forget how to do:
 
+### Linux IPC
+- [Beej's Guide to Unix IPC](https://beej.us/guide/bgipc/html/single/bgipc.html)
+
 ### Screen and Power Management
 - `xset s $NSECONDS`: Sets the timer for the screen to be deactivated to `$NSECONDS`.
 
