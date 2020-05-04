@@ -37,8 +37,8 @@ font xft:Monospace Regular 8
 exec_always --no-startup-id "autorandr --change"
 # maybe this will help fix feh?
 exec_always --no-startup-id "sleep 1"
-# exec_always --no-startup-id "feh --randomize --bg-fill $HOME/Pictures/backgrounds/*"
-exec_always --no-startup-id $HOME/.fehbg
+exec_always --no-startup-id "feh --randomize --bg-fill $HOME/Pictures/backgrounds/*"
+# exec_always --no-startup-id $HOME/.fehbg
 
 # start compton
 exec_always --no-startup-id compton --config $HOME/.config/compton.conf
@@ -74,8 +74,9 @@ bindsym $mod+F1 exec "alacritty -e /opt/julia/bin/julia"
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_recency
+# rofi bindings
+bindsym $mod+d exec --no-startup-id "rofi -show run"
+bindsym $mod+Shift+d exec --no-startup-id "rofi -show ssh"
 
 # launch categorized menu
 #bindsym $mod+z exec --no-startup-id morc-menu

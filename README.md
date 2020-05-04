@@ -5,9 +5,6 @@ Note that a lot of helpful information on which programs to use can be found at
 [privacytools.io](https://www.privacytools.io).
 
 ## Distro
-I've very quickly come to prefer Manjaro for a number of reasons, in particular that it seems to have amazingly worry-free hardware setup even for nVidia.
-Historically I've used Ubuntu quite a lot, but lately am getting rather fed up with the update model among other things.
-
 For the most part everything described here should be more-or-less distro agnostic, but it'll probably be easiest on Arch branches.  Currently the one known
 major headache on Ubuntu is that on Ubuntu one has to compile `polybar`.  This is a big pain because `polybar` depends on `libxcb` and in the Ubuntu repos that
 library is split into about a billion different packages, so you'll be spending a good amount of time figuring out which ones you need.
@@ -32,6 +29,9 @@ Firefox+tridactyl because I could no longer survive without the Firefox add-on e
 This is pretty crucial for `i3`.  `arandr` is a simple GUI that lets you arrange the layout of your display output and change resolutions.  `arandr` works by
 generating a 1-line script containing the necessary `xrandr` command.  To make this script execute whenever `i3` starts you can just put a line in your
 `config`.
+
+### [`rofi`](https://github.com/davatorium/rofi)
+This is for launching applications and terminal sessions.
 
 ### [`autorandr`](https://github.com/phillipberndt/autorandr)
 This can detect your display configuration and apply saved settings.  It is also useful for manually saving profiles.
@@ -87,7 +87,7 @@ The following are required for my default setup
 - `i3-gaps` (equivalently `i3` should work just fine) ([here](https://gist.github.com/boreycutts/6417980039760d9d9dac0dd2148d4783) is a brief guide for
     installing on Debian)
 - `polybar`
-- `dmenu_recency` (alternatively `dmenu` is fine, but be sure to change `i3` config)
+- `rofi`
 - `feh`
 - `autorandr`
 - `ttf-font-awesome` (these are icon fonts used by the `polybar`)
