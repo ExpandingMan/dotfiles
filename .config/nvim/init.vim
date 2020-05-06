@@ -39,8 +39,7 @@ Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plugin 'zchee/deoplete-jedi'
 
 " search
-Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}
-Plugin 'junegunn/fzf.vim'
+Plugin 'jremmen/vim-ripgrep'
 
 call vundle#end()
 filetype plugin indent on
