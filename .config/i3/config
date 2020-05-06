@@ -75,8 +75,8 @@ bindsym $mod+F1 exec "alacritty -e /opt/julia/bin/julia"
 bindsym $mod+Shift+q kill
 
 # rofi bindings
-bindsym $mod+d exec --no-startup-id "rofi -show run"
-bindsym $mod+Shift+d exec --no-startup-id "rofi -show ssh"
+bindsym $mod+d exec --no-startup-id "rofi -show run -1"
+bindsym $mod+Shift+d exec --no-startup-id "rofi -show ssh -1"
 
 # launch categorized menu
 #bindsym $mod+z exec --no-startup-id morc-menu
