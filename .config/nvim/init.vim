@@ -18,6 +18,7 @@ Plugin 'dracula/vim'
 
 " language support
 Plugin 'JuliaEditorSupport/julia-vim'
+Plugin 'rust-lang/rust.vim'
 Plugin 'lervag/vimtex'
 Plugin 'cespare/vim-toml'
 Plugin 'plasticboy/vim-markdown'
