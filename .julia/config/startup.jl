@@ -10,6 +10,8 @@ atreplinit() do repl
     try
         @eval begin
             using OhMyREPL
+            # hacky fix for []] issue
+            @async (sleep(1); OhMyREPL.Prompt.insert_keybindings())
             import OhMyREPL: Passes.SyntaxHighlighter; const SH = SyntaxHighlighter
             OhMyREPL.Passes.SyntaxHighlighter.add!("Dracula", begin
                 cs = SH.ColorScheme()
