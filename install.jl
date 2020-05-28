@@ -8,9 +8,9 @@
 
 const NAMES = (nvim=(".config/nvim/init.vim",),
                alacritty=(".config/alacritty/alacritty.yml",),
-               ranger=(".config/ranger/rc.conf",
-                       ".config/ranger/scope.sh"),
-               i3=(".config/i3/config",)
+               ranger=(".config/ranger/rc.conf", ".config/ranger/scope.sh"),
+               i3=(".config/i3/config",),
+               julia=(".julia/config/startup.jl",)
               )
 
 function install(fnames, homedir::AbstractString=ENV["HOME"])
