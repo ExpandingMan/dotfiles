@@ -31,6 +31,9 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ryanoasis/vim-devicons'
 
+" repl
+Plugin 'Vigemus/iron.nvim'
+
 " nerdtree
 Plugin 'scrooloose/nerdtree'
 
@@ -63,8 +66,6 @@ autocmd BufRead,BufNewFile *.jl set filetype=julia
 " LaTeX to unicode as you type in julia
 let g:latex_to_unicode_auto = 1
 let g:latex_to_unicode_tab = 1
-" set specific julia version
-let g:default_julia_version = "0.7"
 
 " toggle LaTeX to unicode key
 nnoremap <expr> <F7> LaTeXtoUnicode#Toggle()
@@ -116,6 +117,32 @@ let g:deoplete#enable_at_startup = 1
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 " ensure deoplete automatically closes preview window
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
+" terminal mode bindings
+tnoremap <Esc> <C-\><C-n>
+tnoremap <A-h> <C-\><C-N><C-w>h
+tnoremap <A-j> <C-\><C-N><C-w>j
+tnoremap <A-k> <C-\><C-N><C-w>k
+tnoremap <A-l> <C-\><C-N><C-w>l
+inoremap <A-h> <C-\><C-N><C-w>h
+inoremap <A-j> <C-\><C-N><C-w>j
+inoremap <A-k> <C-\><C-N><C-w>k
+inoremap <A-l> <C-\><C-N><C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
+nmap <localleader>t    <Plug>(iron-send-motion)
+vmap <localleader>v    <Plug>(iron-visual-send)
+nmap <localleader>r    <Plug>(iron-repeat-cmd)
+nmap <localleader>l    <Plug>(iron-send-line)
+nmap <localleader><CR> <Plug>(iron-cr)
+nmap <localleader>i    <plug>(iron-interrupt)
+nmap <localleader>q    <Plug>(iron-exit)
+nmap <localleader>c    <Plug>(iron-clear)
+
+" start REPL via iron.nvim with \r
+nnoremap <Leader>r :IronRepl<CR>
 
 " disable freaky cursor styling
 set guicursor=
