@@ -2,51 +2,48 @@
 " not that this goes in ~/.config/nvim
 " along with everything that'd normally go in ~/.vim
 
-" vundle
-set nocompatible
-filetype off
-set rtp+=~/.config/nvim/bundle/Vundle.vim
-
-" TODO consider switching to https://github.com/Shougo/dein.vim
-" package manager
-call vundle#rc('~/.config/nvim/bundle')
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
+" package manager vim-plug
+call plug#begin('~/.config/nvim/plugged')
+Plug 'VundleVim/Vundle.vim'
 
 " colors
-Plugin 'dracula/vim'
+Plug 'dracula/vim'
 
 " language support
-Plugin 'JuliaEditorSupport/julia-vim'
-Plugin 'rust-lang/rust.vim'
-Plugin 'lervag/vimtex'
-Plugin 'cespare/vim-toml'
-Plugin 'plasticboy/vim-markdown'
+Plug 'JuliaEditorSupport/julia-vim'
+Plug 'rust-lang/rust.vim'
+Plug 'lervag/vimtex'
+Plug 'cespare/vim-toml'
+Plug 'plasticboy/vim-markdown'
 " tables
-Plugin 'godlygeek/tabular'
-Plugin 'chrisbra/csv.vim'
+Plug 'godlygeek/tabular'
+Plug 'chrisbra/csv.vim'
+
+" LanguageServer client
+Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': '/bin/bash install.sh'}
+
+" code completion
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " airline
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'ryanoasis/vim-devicons'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons'
 
 " repl
-Plugin 'Vigemus/iron.nvim'
+Plug 'Vigemus/iron.nvim'
 
 " nerdtree
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 
 " linting and completion (also do UpdateRemotePlugins manually)
-Plugin 'w0rp/ale'
-Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plugin 'zchee/deoplete-jedi'
+Plug 'dense-analysis/ale'
 
 " search
-Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plugin 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+call plug#end()
 
-call vundle#end()
 filetype plugin indent on
 
 " spaces instead of tabs
@@ -56,6 +53,13 @@ set shiftwidth=4
 set expandtab
 set autoindent
 set smarttab
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
+" deoplete tab completion
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" ensure deoplete automatically closes preview window
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " text wrapping for tex and md
 autocmd bufreadpre *.tex setlocal textwidth=90
@@ -74,7 +78,7 @@ inoremap <expr> <F7> LaTeXtoUnicode#Toggle()
 noremap <Leader>f :call julia#toggle_function_blockassign()<CR>
 
 " fix copy-paste buffers
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
 
 " enable true color
 " note that one should enable true color in tmux if using tmux
@@ -111,13 +115,6 @@ autocmd BufRead,BufNewFile *.jl hi Macro ctermfg=84 ctermbg=NONE cterm=NONE guif
 " nerdtree keyboard shortcut
 nmap <silent> <Leader>t :NERDTreeToggle<CR>
 
-" turn on deoplete
-let g:deoplete#enable_at_startup = 1
-" deoplete tab completion
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-" ensure deoplete automatically closes preview window
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-
 " terminal mode bindings
 tnoremap <Esc> <C-\><C-n>
 tnoremap <A-h> <C-\><C-N><C-w>h
@@ -148,17 +145,30 @@ nnoremap <Leader>r :IronRepl<CR>
 set guicursor=
 
 " language server
-" Note that one must install LanguageServer.jl in Julia
+" note this requires Julia LanguageServer.jl, SymbolServer.jl, StaticLint.jl
 let g:LanguageClient_autoStart = 1
 let g:LanguageClient_serverCommands = {
 \   'julia': ['julia', '--startup-file=no', '--history-file=no', '-e', '
 \       using LanguageServer;
-\       server = LanguageServer.LanguageServerInstance(STDIN, STDOUT, false);
-\       server.runlinter = false;
+\       using Pkg;
+\       import StaticLint;
+\       import SymbolServer;
+\       env_path = dirname(Pkg.Types.Context().env.project_file);
+\       server = LanguageServer.LanguageServerInstance(stdin, stdout, env_path);
+\       server.runlinter = true;
 \       run(server);
-\   '],
+\   ']
 \ }
 
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" language server key bindings
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+" for LanguageClient to work with deoplete
+call deoplete#custom#source('LanguageClient',
+            \ 'min_pattern_length',
+            \ 2)
 
 " latex related
 let g:tex_flavor='latex'
