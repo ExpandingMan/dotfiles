@@ -154,8 +154,8 @@ let g:LanguageClient_serverCommands = {
 \       using Pkg;
 \       import StaticLint;
 \       import SymbolServer;
-\       cnxn = stdout
-\       redirect_stdout()
+\       cnxn = stdout;
+\       redirect_stdout();
 \       env_path = dirname(Pkg.Types.Context().env.project_file);
 \       server = LanguageServer.LanguageServerInstance(stdin, cnxn, env_path);
 \       server.runlinter = true;
@@ -183,4 +183,5 @@ let g:tex_conceal='abdmg'
 " LanguageClient WTF
 "let g:LanguageClient_waitOutputTimeout = 60
 "let g:LanguageClient_loggingLevel = 'DEBUG'
-"let g:LanguageClient_loggingFile = expand('~/wtf.log')
+"let g:LanguageClient_loggingFile = expand('~/lsclient.log')
+"let g:LanguageClient_serverStderr = expand('~/lsserverstderr.log')
