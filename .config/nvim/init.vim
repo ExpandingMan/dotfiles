@@ -4,8 +4,6 @@
 
 " package manager vim-plug
 call plug#begin('~/.config/nvim/plugged')
-Plug 'VundleVim/Vundle.vim'
-
 " colors
 Plug 'dracula/vim'
 
@@ -24,6 +22,9 @@ Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': '/bin/bash insta
 
 " code completion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+" code completion via racer for rust
+Plug 'racer-rust/vim-racer'
 
 " airline
 Plug 'vim-airline/vim-airline'
@@ -98,8 +99,8 @@ hi NonText guibg=NONE ctermbg=NONE
 " airline theme
 " let g:airline_theme='oceanicnext'
 let g:airline_theme='dracula'
-" airline powerline fonts, must be installed
-let g:airline_powerline_fonts = 1
+" turn off annoying powerline fonts
+let g:airline_powerline_fonts = 0
 
 " ==== modifications to DRACULA color scheme ====
 " (these only use colors already in the palette)
@@ -153,8 +154,10 @@ let g:LanguageClient_serverCommands = {
 \       using Pkg;
 \       import StaticLint;
 \       import SymbolServer;
+\       cnxn = stdout
+\       redirect_stdout()
 \       env_path = dirname(Pkg.Types.Context().env.project_file);
-\       server = LanguageServer.LanguageServerInstance(stdin, stdout, env_path);
+\       server = LanguageServer.LanguageServerInstance(stdin, cnxn, env_path);
 \       server.runlinter = true;
 \       run(server);
 \   ']
@@ -176,3 +179,8 @@ let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 autocmd BufRead,BufNewFile *.tex set conceallevel=1
 let g:tex_conceal='abdmg'
+
+" LanguageClient WTF
+"let g:LanguageClient_waitOutputTimeout = 60
+"let g:LanguageClient_loggingLevel = 'DEBUG'
+"let g:LanguageClient_loggingFile = expand('~/wtf.log')
