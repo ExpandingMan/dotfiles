@@ -147,21 +147,21 @@ set guicursor=
 
 " language server
 " note this requires Julia LanguageServer.jl, SymbolServer.jl, StaticLint.jl
-let g:LanguageClient_autoStart = 1
-let g:LanguageClient_serverCommands = {
-\   'julia': ['julia', '--startup-file=no', '--history-file=no', '-e', '
-\       using LanguageServer;
-\       using Pkg;
-\       import StaticLint;
-\       import SymbolServer;
-\       cnxn = stdout;
-\       redirect_stdout();
-\       env_path = dirname(Pkg.Types.Context().env.project_file);
-\       server = LanguageServer.LanguageServerInstance(stdin, cnxn, env_path);
-\       server.runlinter = true;
-\       run(server);
-\   ']
-\ }
+"let g:LanguageClient_autoStart = 1
+"let g:LanguageClient_serverCommands = {
+"\   'julia': ['julia', '--startup-file=no', '--history-file=no', '-e', '
+"\       using LanguageServer;
+"\       using Pkg;
+"\       import StaticLint;
+"\       import SymbolServer;
+"\       cnxn = stdout;
+"\       redirect_stdout();
+"\       env_path = dirname(Pkg.Types.Context().env.project_file);
+"\       server = LanguageServer.LanguageServerInstance(stdin, cnxn, env_path);
+"\       server.runlinter = true;
+"\       run(server);
+"\   ']
+"\ }
 
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 " language server key bindings
