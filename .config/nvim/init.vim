@@ -13,6 +13,8 @@ Plug 'rust-lang/rust.vim'
 Plug 'lervag/vimtex'
 Plug 'cespare/vim-toml'
 Plug 'plasticboy/vim-markdown'
+Plug 'ziglang/zig.vim'
+
 " tables
 Plug 'godlygeek/tabular'
 Plug 'chrisbra/csv.vim'
