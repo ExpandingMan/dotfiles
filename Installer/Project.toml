@@ -1,0 +1,9 @@
+name = "Installer"
+uuid = "ad1aedd9-bc2d-4371-b52b-0804ec7604d5"
+authors = ["Expanding Man <savastio@protonmail.com>"]
+version = "0.1.0"
+
+[deps]
+LibGit2 = "76f85450-5226-5b5a-8eaa-529ad045b433"
+Pkg = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
+REPL = "3fa0cd96-eef1-5676-8a61-b3b8758bbffb"

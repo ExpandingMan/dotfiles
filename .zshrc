@@ -3,7 +3,6 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# TODO why the fuck does this not re-export PATH?
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/dell/srvadmin/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -18,15 +17,14 @@ alias rm="rm -i"
 # shortcut to full ls
 alias ll="ls -lh"
 
-# I forget exactly what this did, probably something to do with tmux
-# stty -ixon
-
 # julia multithreading
 export JULIA_NUM_THREADS=6
 
 export JULIA_BINDIR=/opt/julia/bin
 
 export PATH=$PATH:$JULIA_BINDIR
+
+export PATH=$HOME/sbin:$PATH
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$JULIA_BINDIR/../lib
 

@@ -4,6 +4,12 @@ The intention is to make it pretty easy to reproduce my linux installs with only
 Note that a lot of helpful information on which programs to use can be found at
 [privacytools.io](https://www.privacytools.io).
 
+## Installer
+I've made myself a simple installer program in Julia, which can be found in this
+repository under `Installer`.  Enter this with `install.sh`.
+
+![installer](Videos/installer.gif)
+
 ## Distro
 For the most part everything described here should be more-or-less distro agnostic, but it'll probably be easiest on Arch branches.  Currently the one known
 major headache on Ubuntu is that on Ubuntu one has to compile `polybar`.  This is a big pain because `polybar` depends on `libxcb` and in the Ubuntu repos that
