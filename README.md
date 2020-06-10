@@ -175,8 +175,14 @@ available which turns some of their own tactics (i.e. aggregation) against them:
 ## How-To
 Here is a list of useful things that I often forget how to do:
 
-### Linux IPC
+### Useful Linux Stuff
 - [Beej's Guide to Unix IPC](https://beej.us/guide/bgipc/html/single/bgipc.html)
+- [Beej's Guide to Network Programming](https://beej.us/guide/bgnet/)
+- [GNU on
+    Pipes](https://www.gnu.org/software/libc/manual/html_node/Pipes-and-FIFOs.html#Pipes-and-FIFOs)
+- [GNU on
+    Sockets](https://www.gnu.org/software/libc/manual/html_node/Sockets.html#Sockets)
+
 
 ### Screen and Power Management
 - `xset s $NSECONDS`: Sets the timer for the screen to be deactivated to `$NSECONDS`.
