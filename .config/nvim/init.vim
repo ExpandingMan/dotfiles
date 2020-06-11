@@ -18,8 +18,8 @@ Plug 'plasticboy/vim-markdown'
 Plug 'ziglang/zig.vim'
 
 " LSP
-"Plug 'neovim/nvim-lsp'
-"Plug 'haorenW1025/diagnostic-nvim'
+Plug 'neovim/nvim-lsp'
+Plug 'haorenW1025/diagnostic-nvim'
 
 " tables
 Plug 'godlygeek/tabular'
@@ -160,13 +160,16 @@ let g:vimtex_quickfix_mode=0
 autocmd BufRead,BufNewFile *.tex set conceallevel=1
 let g:tex_conceal='abdmg'
 
+" disable ale highlighting
+let g:ale_set_highlights = 0
+
 " ----------------------- Julia Language Server ---------------------------
 "  NOTE: you may need to manually do LspInstall julials
 " -------------------------------------------------------------------------
-"lua << EOF
-"    local nvim_lsp = require'nvim_lsp'
-"    nvim_lsp.julials.setup({on_attach=require'diagnostic'.on_attach})
-"EOF
+lua << EOF
+    local nvim_lsp = require'nvim_lsp'
+    nvim_lsp.julials.setup({on_attach=require'diagnostic'.on_attach})
+EOF
 
 autocmd Filetype julia setlocal omnifunc=v:lua.vim.lsp.omnifunc
 
@@ -181,6 +184,9 @@ nnoremap <silent> <leader>lh :lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> <leader>lf :lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> <leader>lr :lua vim.lsp.buf.references()<CR>
 nnoremap <silent> <leader>l0 :lua vim.lsp.buf.document_symbol()<CR>
+
+" disable obnoxious underlining of everything in the damn universe
+let g:diagnostic_enable_underline = 0
 " -------------------------------------------------------------------------
 "  (end Julia Language Server)
 " -------------------------------------------------------------------------
