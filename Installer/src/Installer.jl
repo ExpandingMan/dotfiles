@@ -52,6 +52,8 @@ end
 function Base.download(d::Download)
     dst = joinpath(HOME_DIR, d.dst)
     mkpath(dirname(dst))
+    # weird shit can happen to curl if it tries to overwrite
+    isfile(dst) && rm(dst)
     download(d.url, dst)
     d.exe && run(`chmod a+x $dst`)
     @info("downloaded $(d.url) to $dst")
@@ -64,9 +66,17 @@ function downloads(p::Program)
     end
 end
 
+function runcommand(cmd::Cmd)
+    r = request("run command $cmd ?", RadioMenu(["yes", "no"]))
+    r == 1 && run(cmd)
+end
+
+runcommands(p::Program) = foreach(runcommand, p.commands)
+
 function install(p::Program)
     installconfigs(p)
     downloads(p)
+    runcommands(p)
     @info("done with $(name(p)).")
 end
 

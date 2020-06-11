@@ -9,8 +9,8 @@ end
 
 struct Program{name}
     configs::Vector{String}
-    commands::Vector{Cmd}
     downloads::Vector{Download}
+    commands::Vector{Cmd}
 end
 
 Program(n::Symbol, c, s, d) = Program{n}(c,s,d)
@@ -19,9 +19,11 @@ Program(n::Symbol, c, s, d) = Program{n}(c,s,d)
 
 const zsh = Program(:zsh, [".zshrc"], [], [])
 
-const neovim = Program(:neovim, [".config/nvim/init.vim"], [],
+const neovim = Program(:neovim, [".config/nvim/init.vim"],
                        [Download("https://github.com/neovim/neovim/"*
-                                 "releases/download/nightly/nvim.appimage", "sbin/nvim", true)])
+                                 "releases/download/nightly/nvim.appimage", "sbin/nvim", true)],
+                       [Cmd(`$(joinpath(ENV["HOME"],"sbin","nvim")) +PlugInstall`)]
+                      )
 
 const alacritty = Program(:alacritty, [".config/alacritty/alacritty.yml"], [], [])
 
