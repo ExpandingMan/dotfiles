@@ -1,6 +1,8 @@
-" this is the initialization script for neovim
-" not that this goes in ~/.config/nvim
-" along with everything that'd normally go in ~/.vim
+" ~~~~~~~~~~~~~~ this is the night, of the Expanding Man ~~~~
+" ~~ I take one last drag, as I approach the stand ~~~~~~~~~~
+
+let mapleader = " "      | " Map leader to space
+let maplocalleader = " " | " Map localleader to space
 
 " package manager vim-plug
 call plug#begin('~/.config/nvim/plugged')
@@ -15,15 +17,17 @@ Plug 'cespare/vim-toml'
 Plug 'plasticboy/vim-markdown'
 Plug 'ziglang/zig.vim'
 
+" LSP
+"Plug 'neovim/nvim-lsp'
+"Plug 'haorenW1025/diagnostic-nvim'
+
 " tables
 Plug 'godlygeek/tabular'
 Plug 'chrisbra/csv.vim'
 
-" LanguageServer client
-Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': '/bin/bash install.sh'}
-
 " code completion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete-lsp'
 
 " code completion via racer for rust
 Plug 'racer-rust/vim-racer'
@@ -144,36 +148,10 @@ nmap <localleader>c    <Plug>(iron-clear)
 " start REPL via iron.nvim with \r
 nnoremap <Leader>r :IronRepl<CR>
 
+set nofoldenable    " get rid of that infernal folding
+
 " disable freaky cursor styling
 set guicursor=
-
-" language server
-" note this requires Julia LanguageServer.jl, SymbolServer.jl, StaticLint.jl
-"let g:LanguageClient_autoStart = 1
-"let g:LanguageClient_serverCommands = {
-"\   'julia': ['julia', '--startup-file=no', '--history-file=no', '-e', '
-"\       using LanguageServer;
-"\       using Pkg;
-"\       import StaticLint;
-"\       import SymbolServer;
-"\       cnxn = stdout;
-"\       redirect_stdout();
-"\       env_path = dirname(Pkg.Types.Context().env.project_file);
-"\       server = LanguageServer.LanguageServerInstance(stdin, cnxn, env_path);
-"\       server.runlinter = true;
-"\       run(server);
-"\   ']
-"\ }
-
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-" language server key bindings
-nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
-" for LanguageClient to work with deoplete
-call deoplete#custom#source('LanguageClient',
-            \ 'min_pattern_length',
-            \ 2)
 
 " latex related
 let g:tex_flavor='latex'
@@ -182,8 +160,27 @@ let g:vimtex_quickfix_mode=0
 autocmd BufRead,BufNewFile *.tex set conceallevel=1
 let g:tex_conceal='abdmg'
 
-" LanguageClient WTF
-"let g:LanguageClient_waitOutputTimeout = 60
-"let g:LanguageClient_loggingLevel = 'DEBUG'
-"let g:LanguageClient_loggingFile = expand('~/lsclient.log')
-"let g:LanguageClient_serverStderr = expand('~/lsserverstderr.log')
+" ----------------------- Julia Language Server ---------------------------
+"  NOTE: you may need to manually do LspInstall julials
+" -------------------------------------------------------------------------
+"lua << EOF
+"    local nvim_lsp = require'nvim_lsp'
+"    nvim_lsp.julials.setup({on_attach=require'diagnostic'.on_attach})
+"EOF
+
+autocmd Filetype julia setlocal omnifunc=v:lua.vim.lsp.omnifunc
+
+" show diagnostics when hovering for too long
+autocmd CursorHold * lua vim.lsp.util.show_line_diagnostics()
+
+let g:diagnostic_enable_virtual_text = 0
+let g:diagnostic_show_sign = 0
+
+nnoremap <silent> <leader>lg :lua vim.lsp.util.show_line_diagnostics()<CR>
+nnoremap <silent> <leader>lh :lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> <leader>lf :lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> <leader>lr :lua vim.lsp.buf.references()<CR>
+nnoremap <silent> <leader>l0 :lua vim.lsp.buf.document_symbol()<CR>
+" -------------------------------------------------------------------------
+"  (end Julia Language Server)
+" -------------------------------------------------------------------------
