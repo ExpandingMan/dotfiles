@@ -19,7 +19,7 @@ Program(n::Symbol, c, s, d) = Program{n}(c,s,d)
 
 const zsh = Program(:zsh, [".zshrc"], [], [])
 
-const neovim = Program(:neovim, [".config/nvim/init.vim"],
+const neovim = Program(:neovim, [".config/nvim/init.vim", ".config/ctags"],
                        [Download("https://github.com/neovim/neovim/"*
                                  "releases/download/nightly/nvim.appimage", "sbin/nvim", true)],
                        [Cmd(`$(joinpath(ENV["HOME"],"sbin","nvim")) +PlugInstall`)]

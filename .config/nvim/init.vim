@@ -21,9 +21,21 @@ Plug 'ziglang/zig.vim'
 Plug 'neovim/nvim-lsp'
 Plug 'haorenW1025/diagnostic-nvim'
 
+" git interaction
+Plug 'tpope/vim-fugitive'
+
+" tagbar buffer navigation
+Plug 'majutsushi/tagbar'
+
+" motions
+Plug 'easymotion/vim-easymotion'
+
 " tables
 Plug 'godlygeek/tabular'
 Plug 'chrisbra/csv.vim'
+
+" gives us lists of key bindings
+Plug 'liuchengxu/vim-which-key'
 
 " code completion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -78,11 +90,26 @@ autocmd BufRead,BufNewFile *.jl set filetype=julia
 let g:latex_to_unicode_auto = 1
 let g:latex_to_unicode_tab = 1
 
+" ----------------------- vim-which-key -----------------------------------
+set timeoutlen=700
+
+let g:mapleader = "\<Space>"
+let g:maplocalleader = "\<Space>"
+let g:which_key_map = {}
+call which_key#register('<Space>', "g:which_key_map")
+nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
+nnoremap <silent> <localleader> :<c-u>WhichKey '<Space>'<CR>
+
+" which key can't figure out the easy-motion mappings
+let g:which_key_map = {" ": 'easy motion (re-input to use)'}
+" -------------------------------------------------------------------------
+
 " toggle LaTeX to unicode key
 nnoremap <expr> <F7> LaTeXtoUnicode#Toggle()
 inoremap <expr> <F7> LaTeXtoUnicode#Toggle()
 " julia function form toggle
 noremap <Leader>f :call julia#toggle_function_blockassign()<CR>
+let g:which_key_map.f = 'julia function block toggle'
 
 " fix copy-paste buffers
 set clipboard+=unnamedplus
@@ -136,19 +163,34 @@ nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
-nmap <localleader>t    <Plug>(iron-send-motion)
-vmap <localleader>v    <Plug>(iron-visual-send)
-nmap <localleader>r    <Plug>(iron-repeat-cmd)
-nmap <localleader>l    <Plug>(iron-send-line)
-nmap <localleader><CR> <Plug>(iron-cr)
-nmap <localleader>i    <plug>(iron-interrupt)
-nmap <localleader>q    <Plug>(iron-exit)
-nmap <localleader>c    <Plug>(iron-clear)
 
-" start REPL via iron.nvim with \r
-nnoremap <Leader>r :IronRepl<CR>
+"---------------------- REPL interaction (iron.nvim) ------------------------------
+let g:which_key_map.r = {'name': 'REPL interaction (iron)'}
+
+nmap <localleader>rt    <Plug>(iron-send-motion)
+let g:which_key_map.r.t = 'motion send'
+vmap <localleader>rv    <Plug>(iron-visual-send)
+let g:which_key_map.r.v = 'visual send'
+nmap <localleader>rr    <Plug>(iron-repeat-cmd)
+let g:which_key_map.r.r = 'repeat command'
+nmap <localleader>rl    <Plug>(iron-send-line)
+let g:which_key_map.r.l = 'send line'
+nmap <localleader>r<CR> <Plug>(iron-cr)
+let g:which_key_map.r.CR = 'carriage return'
+nmap <localleader>ri    <plug>(iron-interrupt)
+let g:which_key_map.r.i = 'interrupt'
+nmap <localleader>rq    <Plug>(iron-exit)
+let g:which_key_map.r.q = 'exit'
+nmap <localleader>rc    <Plug>(iron-clear)
+let g:which_key_map.r.c = 'clear'
+
+nnoremap <Leader>rr :IronRepl<CR>
+let g:which_key_map.r.r = 'start REPL'
+"-----------------------------------------------------------------------------------
+
 
 set nofoldenable    " get rid of that infernal folding
+let g:vim_markdown_folding_disabled = 1
 
 " disable freaky cursor styling
 set guicursor=
@@ -162,6 +204,19 @@ let g:tex_conceal='abdmg'
 
 " disable ale highlighting
 let g:ale_set_highlights = 0
+
+" activate tagbar
+nmap <F2> :TagbarToggle<CR>
+
+" tagbar for Julia
+let g:tagbar_type_julia = {
+    \ 'ctagstype' : 'julia',
+    \ 'kinds'     : [
+        \ 't:struct', 'f:function', 'm:macro', 'c:const']
+    \ }
+
+" ctags config location
+let g:tagbar_ctags_options = ['NONE', $HOME.'/.config/ctags']
 
 " ----------------------- Julia Language Server ---------------------------
 "  NOTE: you may need to manually do LspInstall julials
@@ -179,11 +234,18 @@ autocmd CursorHold * lua vim.lsp.util.show_line_diagnostics()
 let g:diagnostic_enable_virtual_text = 0
 let g:diagnostic_show_sign = 0
 
+let g:which_key_map.l = {'name': 'Language Server Protocol'}
+
 nnoremap <silent> <leader>lg :lua vim.lsp.util.show_line_diagnostics()<CR>
+let g:which_key_map.l.g = 'line diagonstics'
 nnoremap <silent> <leader>lh :lua vim.lsp.buf.hover()<CR>
+let g:which_key_map.l.h = 'documentation'
 nnoremap <silent> <leader>lf :lua vim.lsp.buf.definition()<CR>
+let g:which_key_map.l.f = 'jump to definition'
 nnoremap <silent> <leader>lr :lua vim.lsp.buf.references()<CR>
+let g:which_key_map.l.r = 'references'
 nnoremap <silent> <leader>l0 :lua vim.lsp.buf.document_symbol()<CR>
+let g:which_key_map.l.0 = 'document symbol'
 
 " disable obnoxious underlining of everything in the damn universe
 let g:diagnostic_enable_underline = 0
