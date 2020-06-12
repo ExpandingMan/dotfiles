@@ -91,7 +91,7 @@ let g:latex_to_unicode_auto = 1
 let g:latex_to_unicode_tab = 1
 
 " ----------------------- vim-which-key -----------------------------------
-set timeoutlen=700
+set timeoutlen=500
 
 let g:mapleader = "\<Space>"
 let g:maplocalleader = "\<Space>"
