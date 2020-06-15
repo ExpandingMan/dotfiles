@@ -120,7 +120,10 @@ It is expected that you keep your backgrounds in `$HOME/Pictures/backgrounds`.  
 I like to use a huge number of different backgrounds, the only rule is that they all be somehow "sci-fi" themed (especially spaceships!).
 
 ### Fonts
-I mostly use `Monospace Regular`, mostly because it has really good unicode.
+[Hack](https://github.com/source-foundry/Hack).  Should have good unicode support, but the
+way fonts get patched seems to work out much better in Arch than Debian.
+- Arch Package: `ttf-hack`
+- Debian Package: `fonts-hack`
 
 ### Future Plans
 The current situation with the colors is highly unsatisfactory.  There are some nice tools for assigning colors using images as references using clustering of

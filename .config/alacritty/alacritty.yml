@@ -90,7 +90,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux) monospace
     #   - (Windows) Consolas
-    family: Monospace
+    family: Hack
     style: Regular
 
   # Bold font face
