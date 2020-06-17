@@ -524,13 +524,13 @@ key_bindings:
   - { key: End,                     chars: "\x1bOF",        mode: AppCursor  }
   - { key: End,                     chars: "\x1b[F",        mode: ~AppCursor }
   - { key: PageUp,   mods: Shift,   action: ScrollPageUp,   mode: ~Alt       }
-  - { key: B,        mods: Control, action: ScrollPageUp                     }
+  - { key: U,        mods: Alt,     action: ScrollPageUp                     }
   - { key: PageUp,   mods: Shift,   chars: "\x1b[5;2~",     mode: Alt        }
   - { key: PageUp,   mods: Control, chars: "\x1b[5;5~"                       }
   - { key: PageUp,   mods: Alt,     chars: "\x1b[5;3~"                       }
   - { key: PageUp,                  chars: "\x1b[5~"                         }
   - { key: PageDown, mods: Shift,   action: ScrollPageDown, mode: ~Alt       }
-  - { key: F,        mods: Control, action: ScrollPageDown                   }
+  - { key: D,        mods: Alt,     action: ScrollPageDown                   }
   - { key: PageDown, mods: Shift,   chars: "\x1b[6;2~",     mode: Alt        }
   - { key: PageDown, mods: Control, chars: "\x1b[6;5~"                       }
   - { key: PageDown, mods: Alt,     chars: "\x1b[6;3~"                       }
@@ -551,13 +551,13 @@ key_bindings:
   - { key: Right,                   chars: "\x1b[C",        mode: ~AppCursor }
   - { key: Right,                   chars: "\x1bOC",        mode: AppCursor  }
   - { key: Up,       mods: Shift,   action: ScrollLineUp                     }
-  - { key: K,        mods: Control|Shift, action: ScrollLineUp               }
+  - { key: K,        mods: Alt,     action: ScrollLineUp                     }
   - { key: Up,       mods: Control, chars: "\x1b[1;5A"                       }
   - { key: Up,       mods: Alt,     chars: "\x1b[1;3A"                       }
   - { key: Up,                      chars: "\x1b[A",        mode: ~AppCursor }
   - { key: Up,                      chars: "\x1bOA",        mode: AppCursor  }
   - { key: Down,     mods: Shift,   action: ScrollLineDown                   }
-  - { key: J,        mods: Control|Shift, action: ScrollLineDown             }  
+  - { key: J,        mods: Alt,     action: ScrollLineDown                   }
   - { key: Down,     mods: Control, chars: "\x1b[1;5B"                       }
   - { key: Down,     mods: Alt,     chars: "\x1b[1;3B"                       }
   - { key: Down,                    chars: "\x1b[B",        mode: ~AppCursor }
