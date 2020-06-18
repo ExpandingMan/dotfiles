@@ -33,6 +33,11 @@ const i3 = Program(:i3, [".config/i3/config"], [], [])
 
 const polybar = Program(:polybar, [".config/polybar/config", ".config/polybar/launch.sh"], [], [])
 
+const tridactyl = Program(:tridactyl,
+                          [".config/tridactyl/tridactylrc",
+                           ".config/tridactyl/themes/dracula.css"],
+                          [], [])
+
 const julia = Program(:julia, [".julia/config/startup.jl"], [], [])
 
 
