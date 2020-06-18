@@ -27,9 +27,16 @@ function programs()
     ps
 end
 
-_shouldwrite(dst) = !isfile(dst) || (request("$dst exists, replace?", RadioMenu(["yes","no"])) == 1)
+function _shouldwrite(dst)
+    if isfile(dst) && isinteractive()
+        request("$dst exists, replace?", RadioMenu(["yes","no"])) == 1
+    else
+        true
+    end
+end
 
 function diff(src, dst)
+    isinteractive() || return true
     if isfile(dst)
         r = request("$dst exists, replace?", RadioMenu(["yes", "no", "edit diff"]))
         r == 3 && run(`nvim -d $src $dst`)
@@ -67,8 +74,11 @@ function downloads(p::Program)
 end
 
 function runcommand(cmd::Cmd)
-    r = request("run command $cmd ?", RadioMenu(["yes", "no"]))
-    r == 1 && run(cmd)
+    if isinteractive()
+        request("run command $cmd ?", RadioMenu(["yes", "no"])) == 1
+    else
+        true
+    end && run(cmd)
 end
 
 runcommands(p::Program) = foreach(runcommand, p.commands)
@@ -81,19 +91,25 @@ function install(p::Program)
 end
 
 function install(progs=programs())
-    idx = collect(request("Select programs to install:", MultiSelectMenu(string.(name.(progs)))))
+    idx = if isinteractive()
+        collect(request("Select programs to install:", MultiSelectMenu(string.(name.(progs)))))
+    else
+        eachindex(progs)
+    end
     foreach(install, progs[idx])
 end
 
 function help()
     printstyled("Expanding Man's Installer\n", bold=true, color=:blue)
-    printstyled("""
-    - `help`: this message
-    - `install()`: select from a menu of programs
-    - `install(p::Program)`: install specific program
-    - `Programs`: module containing programs
-    - `programs()`: list of programs in `Programs`\n
-    """, color=:light_magenta)
+    if isinteractive()
+        printstyled("""
+        - `help`: this message
+        - `install()`: select from a menu of programs
+        - `install(p::Program)`: install specific program
+        - `Programs`: module containing programs
+        - `programs()`: list of programs in `Programs`\n
+        """, color=:light_magenta)
+    end
 end
 
 export help, install, programs, Programs
