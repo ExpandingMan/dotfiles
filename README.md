@@ -4,6 +4,9 @@ The intention is to make it pretty easy to reproduce my linux installs with only
 Note that a lot of helpful information on which programs to use can be found at
 [privacytools.io](https://www.privacytools.io).
 
+A useful list of applications and plugins with vim-like control bindings can be found at
+[Big Pile of Vim-Like](https://vim.reversed.top/).
+
 ## Installer
 I've made myself a simple installer program in Julia, which can be found in this
 repository under `Installer`.  Enter this with `install.sh`.
