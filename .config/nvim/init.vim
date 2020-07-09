@@ -255,6 +255,10 @@ nnoremap <silent> <leader>dd :cd %:p:h<CR>:pwd<CR>
 let g:which_key_map.d.d = 'change to directory of current file'
 nnoremap <silent> <leader>de :cd %:p:h/..<CR>:pwd<CR>
 let g:which_key_map.d.e = 'change to parent directory of current file directory'
+nnoremap <silent> <leader>dh :cd<CR>:pwd<CR>
+let g:which_key_map.d.h = 'change to home directory'
+nnoremap <silent> <leader>dJ :cd -<CR>:pwd<CR>
+let g:which_key_map.d.J = 'change to previous directory'
 nnoremap <leader>da :set autochdir!<CR>
 let g:which_key_map.d.a = 'toggle auto directory switching'
 
