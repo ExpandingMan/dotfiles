@@ -247,6 +247,17 @@ let g:which_key_map.l.r = 'references'
 nnoremap <silent> <leader>l0 :lua vim.lsp.buf.document_symbol()<CR>
 let g:which_key_map.l.0 = 'document symbol'
 
+let g:which_key_map.d = {'name': 'Directory'}
+
+nnoremap <silent> <leader>dp :pwd<CR>
+let g:which_key_map.d.p = 'show present working directory'
+nnoremap <silent> <leader>dd :cd %:p:h<CR>:pwd<CR>
+let g:which_key_map.d.d = 'change to directory of current file'
+nnoremap <silent> <leader>de :cd %:p:h/..<CR>:pwd<CR>
+let g:which_key_map.d.e = 'change to parent directory of current file directory'
+nnoremap <leader>da :set autochdir!<CR>
+let g:which_key_map.d.a = 'toggle auto directory switching'
+
 " disable obnoxious underlining of everything in the damn universe
 let g:diagnostic_enable_underline = 0
 " -------------------------------------------------------------------------
