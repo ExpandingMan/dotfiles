@@ -16,6 +16,7 @@ Plug 'lervag/vimtex'
 Plug 'cespare/vim-toml'
 Plug 'plasticboy/vim-markdown'
 Plug 'ziglang/zig.vim'
+Plug 'vim-crystal/vim-crystal'
 
 " LSP
 Plug 'neovim/nvim-lsp'
