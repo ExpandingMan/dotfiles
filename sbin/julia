@@ -1,0 +1,11 @@
+#!/bin/bash
+JULIA=/opt/julia/bin/julia
+
+if [[ $1 == "default" ]]; then
+    ARGS=""
+    shift
+else
+    ARGS="--banner=no --depwarn=yes"
+fi
+
+$JULIA $ARGS $*
