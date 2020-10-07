@@ -5,7 +5,7 @@ See [this](https://castel.dev/post/lecture-notes-1/) extremely helpful blog post
 
 Note that one must install `latexmk` for continuous compilation.
 
-You can initiate compilation with `\ll` and view the file with `\lv`.  See `:help vimtex` for more.
+You can initiate compilation with `<leader>ll` and view the file with `<leader>lv`.  See `:help vimtex` for more.
 
 ## Changin Margins (with little effort)
 Note that the `fullpage` package is deprecated, and often won't be found.  Alternatively, you can use the `geometry` package.  For example, a good alternative
