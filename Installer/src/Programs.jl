@@ -40,5 +40,11 @@ const tridactyl = Program(:tridactyl,
 
 const julia = Program(:julia, [".julia/config/startup.jl"], [], [])
 
+# TODO don't currently have a way of getting most recent URL
+const freetube = Program(:freetube, [],
+                         [Download("https://github.com/FreeTubeApp/FreeTube/releases"*
+                                   "/download/v0.9.0-beta/FreeTube-0.9.0.AppImage",
+                                   "sbin/freetube", true)], [])
+
 
 end # module Programs
