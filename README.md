@@ -90,6 +90,10 @@ Vim-like PDF viewer.  On Arch, be sure to install `zathura-pdf-mupdf`.
 ### `neomutt`
 See hideous website [here](https://neomutt.org/).  This is a vim-like mail client I'm considering setting up.
 
+### [`bpytop`](https://github.com/aristocratos/bpytop)
+This is the coolest version of `top` that I've seen.  It even has the dracula theme
+built-in.  Get it with `pip install bpytop`.
+
 
 ### Required
 The following are required for my default setup
