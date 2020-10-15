@@ -46,5 +46,8 @@ const freetube = Program(:freetube, [],
                                    "/download/v0.9.0-beta/FreeTube-0.9.0.AppImage",
                                    "sbin/freetube", true)], [])
 
+const bpytop = Program(:bpytop, [".config/bpytop/bpytop.conf"], [],
+                       [Cmd(`pip install bpytop`)])
+
 
 end # module Programs
