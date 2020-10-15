@@ -94,6 +94,10 @@ See hideous website [here](https://neomutt.org/).  This is a vim-like mail clien
 This is the coolest version of `top` that I've seen.  It even has the dracula theme
 built-in.  Get it with `pip install bpytop`.
 
+### [`kmon`](https://github.com/orhun/kmon)
+A TUI kernel monitor.  This is really useful because it shows a lot of stuff which is
+otherwise hard to find.
+
 
 ### Required
 The following are required for my default setup
