@@ -51,7 +51,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 
 " repl
-Plug 'Vigemus/iron.nvim'
+Plug 'hkupty/iron.nvim'
 
 " nerdtree
 Plug 'scrooloose/nerdtree'
