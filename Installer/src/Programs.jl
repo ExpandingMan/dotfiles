@@ -38,7 +38,7 @@ const tridactyl = Program(:tridactyl,
                            ".config/tridactyl/themes/dracula.css"],
                           [], [])
 
-const julia = Program(:julia, [".julia/config/startup.jl"], [], [])
+const julia = Program(:julia, ["sbin/julia", ".julia/config/startup.jl"], [], [])
 
 const rofi = Program(:rofi, [".config/rofi/config.rasi"], [], [])
 
