@@ -40,10 +40,12 @@ const tridactyl = Program(:tridactyl,
 
 const julia = Program(:julia, [".julia/config/startup.jl"], [], [])
 
+const rofi = Program(:rofi, [".config/rofi/config.rasi"], [], [])
+
 # TODO don't currently have a way of getting most recent URL
 const freetube = Program(:freetube, [],
                          [Download("https://github.com/FreeTubeApp/FreeTube/releases"*
-                                   "/download/v0.9.0-beta/FreeTube-0.9.0.AppImage",
+                                   "/download/v0.9.1-beta/FreeTube-0.9.1.AppImage",
                                    "sbin/freetube", true)], [])
 
 const bpytop = Program(:bpytop, [".config/bpytop/bpytop.conf"], [],
