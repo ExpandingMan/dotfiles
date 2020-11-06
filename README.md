@@ -209,3 +209,10 @@ Here is a list of useful things that I often forget how to do:
 - `ldconfig -p`: Lists all libraries in library paths. For example do `ldconfig -p | grep libsdl` to find SDL libraries.
 - `ldd`: Lists all the libraries that the binary links to.
 - `objdump -p`: Lists all libraries that a binary links to among other things. Note you can also do `ldd` but this may result in code execution.
+
+### Display Servers
+- You can start a new X windows session from one of the other terminals (i.e.
+    `ctrl-alt-Fn` by doing `startx` from that terminal.
+- Wayland is actually a protocol that's implemented by the desktop environments, so there
+    is no equivalent to `startx`.  You can try running it from e.g. GNOME by doing
+    `gnome-session --session gnome-wayland`.
