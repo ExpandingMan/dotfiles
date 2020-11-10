@@ -2,7 +2,7 @@
 OPTDIR=/opt
 JULIA_DIR=$OPTDIR/julia
 JULIA=$JULIA_DIR/bin/julia
-JULIA_VERSION="1.5.2"
+JULIA_VERSION="1.5.3"
 JULIA_DOWNLOAD_URL="https://julialang-s3.julialang.org/bin/linux/x64/1.5/julia-$JULIA_VERSION-linux-x86_64.tar.gz"
 
 # can install julia binaries by doint ./install.sh julia
