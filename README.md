@@ -1,3 +1,12 @@
+# ⛔GITHUB REPO DEPRECATED ⛔
+For a
+[multitude](https://www.eff.org/deeplinks/2020/11/riaa-abuses-dmca-take-down-popular-tool-downloading-online-video) [of](https://about.gitlab.com/features/) [reasons](https://en.wikipedia.org/wiki/Censorship_of_GitHub)
+I have decided to stop using github where possible.  (I will of course continue to be
+involved with projects which still reside here.)
+
+Please see my [dotfiles repo on gitlab](https://gitlab.com/ExpandingMan/dotfiles)!
+
+
 # dotfiles
 The intention is to make it pretty easy to reproduce my linux installs with only what is in this repository.
 
